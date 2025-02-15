@@ -14,8 +14,9 @@
     bitwarden
     git
     qemu
-    dolphin
     nautilus
+    fastfetch
+    mpv
   ];
 
   programs.bash = {

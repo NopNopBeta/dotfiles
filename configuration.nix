@@ -75,6 +75,12 @@
     slurp
     exfat
     ntfs3g
+    oh-my-zsh
+    zsh
+    zsh-completions
+    zsh-powerlevel10k
+    zsh-syntax-highlighting
+    zsh-history-substring-search
   ];
 
   # Font config
@@ -88,16 +94,35 @@
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
   # Nvidia
-  hardware.nvidia = {
-  modesetting.enable = true;
-  open = true;
+  hardware.graphics = {
+    enable = true;
   };
 
+  hardware.nvidia = {
+  modesetting.enable = true;
+  nvidiaSettings = true;
+  open = true;
+  package = config.boot.kernelPackages.nvidiaPackages.stable;
+  };
+
+  services.xserver.videoDrivers = ["nvidia"];
   # Virt Manager
   programs.virt-manager.enable = true;
   users.groups.libvirtd.members = ["nop"];
   virtualisation.libvirtd.enable = true;
   virtualisation.spiceUSBRedirection.enable = true;
+
+  #zsh config
+  programs.zsh.enable = true;
+  users.defaultUserShell = pkgs.zsh;
+
+  #Steam
+  programs.steam = {
+  enable = true;
+  remotePlay.openFirewall = true; # Open ports in the firewall for Steam Remote Play
+  dedicatedServer.openFirewall = true; # Open ports in the firewall for Source Dedicated Server
+  localNetworkGameTransfers.openFirewall = true; # Open ports in the firewall for Steam Local Network Game Transfers
+};
 
 }
 
