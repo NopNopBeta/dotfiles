@@ -13,6 +13,9 @@
     discord
     bitwarden
     git
+    qemu
+    dolphin
+    nautilus
   ];
 
   programs.bash = {

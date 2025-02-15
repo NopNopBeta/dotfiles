@@ -73,6 +73,8 @@
     swappy
     grim
     slurp
+    exfat
+    ntfs3g
   ];
 
   # Font config
@@ -90,5 +92,12 @@
   modesetting.enable = true;
   open = true;
   };
+
+  # Virt Manager
+  programs.virt-manager.enable = true;
+  users.groups.libvirtd.members = ["nop"];
+  virtualisation.libvirtd.enable = true;
+  virtualisation.spiceUSBRedirection.enable = true;
+
 }
 
