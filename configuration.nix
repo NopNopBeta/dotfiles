@@ -67,6 +67,12 @@
     kitty
     vscode
     hyprpanel
+    rofi
+    stow
+    tree
+    swappy
+    grim
+    slurp
   ];
 
   # Font config
