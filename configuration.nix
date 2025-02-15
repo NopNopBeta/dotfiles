@@ -60,6 +60,7 @@
       isNormalUser = true;
       description = "nop";
       extraGroups = [ "networkmanager" "wheel" "video" ];
+      shell = pkgs.zsh;
     };
 
     # System packages
@@ -77,8 +78,6 @@
       ntfs3g
       oh-my-zsh
       zsh
-      bluez
-      bluez-tools
     ];
 
     # Font config
@@ -113,6 +112,11 @@
     #zsh config
    programs.zsh = {
     enable = true;
+
+    enableCompletion = true;
+    autosuggestions.enable = true;
+    syntaxHighlighting.enable = true;
+
     ohMyZsh = {
       enable = true;
       plugins = [ 
@@ -124,15 +128,14 @@
         "python" 
         "history" 
       ];
+
       theme = "robbyrussell";  # Ganti dengan tema yang diinginkan (e.g., "agnoster")
       customPkgs = with pkgs; [
         # Plugin eksternal (contoh: zsh-autosuggestions, zsh-syntax-highlighting)
         zsh-autosuggestions
         zsh-syntax-highlighting
         zsh-completions
-        zsh-completions
         zsh-powerlevel10k
-        zsh-history-substring-search
       ];
     };
   };
