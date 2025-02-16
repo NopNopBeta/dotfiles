@@ -17,13 +17,23 @@
     nautilus
     fastfetch
     mpv
-    inputs.swww.packages.${pkgs.system}.swww 
+    inputs.swww.packages.${pkgs.system}.swww
+    bibata-cursors 
+
   ];
 
   programs.bash = {
     enable = true;
     shellAliases.ll = "ls -l";
   };
+
+  home.pointerCursor = {
+  name = "Bibata-Modern-Ice";
+  package = pkgs.bibata-cursors;
+  size = 24;  # Adjust size as needed
+  gtk.enable = true;
+  x11.enable = true;
+};
 
   programs.firefox.enable = true;  # Moved from system config
 }
