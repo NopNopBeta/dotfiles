@@ -78,6 +78,7 @@
       ntfs3g
       oh-my-zsh
       zsh
+      bibata-cursors 
     ];
 
     # Font config
