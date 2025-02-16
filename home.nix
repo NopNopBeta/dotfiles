@@ -14,7 +14,7 @@
     bitwarden
     git
     qemu
-    nautilus
+    dolphin
     fastfetch
     mpv
     inputs.swww.packages.${pkgs.system}.swww

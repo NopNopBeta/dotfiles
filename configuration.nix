@@ -59,9 +59,10 @@
     users.users.nop = {
       isNormalUser = true;
       description = "nop";
-      extraGroups = [ "networkmanager" "wheel" "video" ];
+      extraGroups = [ "networkmanager" "wheel" "video" "storage" ];
       shell = pkgs.zsh;
     };
+
 
     # System packages
     environment.systemPackages = with pkgs; [
@@ -74,11 +75,11 @@
       swappy
       grim
       slurp
-      exfat
-      ntfs3g
       oh-my-zsh
       zsh
-      bibata-cursors 
+      bibata-cursors
+      nautilus
+      lxde.lxsession 
     ];
 
     # Font config
@@ -104,6 +105,7 @@
     };
 
     services.xserver.videoDrivers = ["nvidia"];
+
     # Virt Manager
     programs.virt-manager.enable = true;
     users.groups.libvirtd.members = ["nop"];
@@ -132,7 +134,6 @@
 
       theme = "robbyrussell";  # Ganti dengan tema yang diinginkan (e.g., "agnoster")
       customPkgs = with pkgs; [
-        # Plugin eksternal (contoh: zsh-autosuggestions, zsh-syntax-highlighting)
         zsh-autosuggestions
         zsh-syntax-highlighting
         zsh-completions
@@ -149,11 +150,18 @@
     localNetworkGameTransfers.openFirewall = true; # Open ports in the firewall for Steam Local Network Game Transfers
   };
 
-  #fix bug bluetooth
-  services.upower.enable = true;
-  services.libinput.enable = true;
-  hardware.bluetooth.enable = true;
-  hardware.bluetooth.powerOnBoot = false;
-  services.blueman.enable = true;
-  }
+  # Auto detect mounting
+    services.devmon.enable = true;
+    services.gvfs.enable = true; 
+    services.udisks2.enable = true;
+    security.polkit.enable = true;
+    boot.supportedFilesystems = [ "ntfs" "exfat"];
+
+    #fix bug bluetooth
+    services.upower.enable = true;
+    services.libinput.enable = true;
+    hardware.bluetooth.enable = true;
+    hardware.bluetooth.powerOnBoot = false;
+    services.blueman.enable = true;
+    }
 
