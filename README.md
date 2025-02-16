@@ -1,8 +1,10 @@
 # My First Dotfiles
 
-### Requirements
+### Packages
+list of the packages I'm using right now
 ```
-kitty
+Fastfetch
+Kitty
 Swww
 Hyprpanel
 Fastfetch
