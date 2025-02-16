@@ -4,7 +4,8 @@
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
     hyprpanel.url = "github:jas-singhfsu/hyprpanel";
-      hyprpanel.inputs.nixpkgs.follows = "nixpkgs";
+    hyprpanel.inputs.nixpkgs.follows = "nixpkgs";
+    swww.url = "github:LGFae/swww";
       
     home-manager = {
       url = "github:nix-community/home-manager/master";
@@ -24,6 +25,7 @@
           home-manager = {
             useUserPackages = true;
             users.nop = import ./home.nix;
+            extraSpecialArgs = { inherit inputs; };
           };
         }
 

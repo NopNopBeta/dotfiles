@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ config, pkgs, inputs, ... }:
 {
   nixpkgs.config.allowUnfree = true;
 
@@ -17,6 +17,7 @@
     nautilus
     fastfetch
     mpv
+    inputs.swww.packages.${pkgs.system}.swww 
   ];
 
   programs.bash = {
