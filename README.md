@@ -3,5 +3,8 @@
 ### Requirements
 ```
 kitty
-hyprland
+Swww
+Hyprpanel
+Fastfetch
+Swappy
 ```
