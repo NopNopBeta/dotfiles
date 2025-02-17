@@ -3,16 +3,21 @@
     imports = [ ./hardware-configuration.nix ];
 
     # Bootloader
-    boot.loader = {
-      systemd-boot.enable = true;
-      efi.canTouchEfiVariables = true;
+    boot.loader.grub = {
+      enable = true;
+      device = "nodev";
+      useOSProber = true;
+      efiSupport = true;
     };
+
+    boot.loader.efi.canTouchEfiVariables = true;
 
     # Network
     networking = {
       hostName = "nixos";
       networkmanager.enable = true;
     };
+
 
     # Localization
     time.timeZone = "Asia/Jakarta";
@@ -32,7 +37,7 @@
     };
 
   # Use Qt6 SDDM from KDE packages
-  services.xserver.displayManager.sddm = {
+  services.displayManager.sddm = {
       enable = true;
       wayland.enable = true;
       package = pkgs.kdePackages.sddm;  # Explicit Qt6 version
@@ -88,7 +93,6 @@
       bibata-cursors
       lxde.lxsession
       sddm-astronaut
-      kvantum
     ];
 
     # Font config

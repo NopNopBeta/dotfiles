@@ -19,6 +19,7 @@
     mpv
     inputs.swww.packages.${pkgs.system}.swww
     zoom-us
+    inputs.zen-browser.packages."${pkgs.system}".default
   ];
 
   programs.bash = {

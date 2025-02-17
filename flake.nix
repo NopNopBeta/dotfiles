@@ -6,6 +6,7 @@
     hyprpanel.url = "github:jas-singhfsu/hyprpanel";
     hyprpanel.inputs.nixpkgs.follows = "nixpkgs";
     swww.url = "github:LGFae/swww";
+    zen-browser.url = "github:0xc000022070/zen-browser-flake";
       
     home-manager = {
       url = "github:nix-community/home-manager/master";
