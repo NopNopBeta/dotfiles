@@ -31,11 +31,19 @@
       };
     };
 
-    # X11/Wayland
-    services.xserver = {
+  # Use Qt6 SDDM from KDE packages
+  services.xserver.displayManager.sddm = {
       enable = true;
-      displayManager.gdm.enable = true;
-      xkb.layout = "us";
+      wayland.enable = true;
+      package = pkgs.kdePackages.sddm;  # Explicit Qt6 version
+      theme = "sddm-astronaut-theme";  # Verify theme directory name in package
+      
+      extraPackages = with pkgs; [
+        sddm-astronaut  # The theme package (check exact name)
+        qt6.qtmultimedia
+        qt6.qtsvg
+        qt6.qt5compat  # Often needed for compatibility
+      ]; 
     };
 
     # Hyprland
@@ -79,7 +87,8 @@
       zsh
       bibata-cursors
       nautilus
-      lxde.lxsession 
+      lxde.lxsession
+      sddm-astronaut
     ];
 
     # Font config
@@ -163,5 +172,6 @@
     hardware.bluetooth.enable = true;
     hardware.bluetooth.powerOnBoot = false;
     services.blueman.enable = true;
-    }
+  
+}
 

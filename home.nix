@@ -18,6 +18,7 @@
     fastfetch
     mpv
     inputs.swww.packages.${pkgs.system}.swww
+    zoom-us
   ];
 
   programs.bash = {
