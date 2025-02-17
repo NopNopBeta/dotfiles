@@ -14,7 +14,7 @@
     bitwarden
     git
     qemu
-    dolphin
+    nautilus
     fastfetch
     mpv
     inputs.swww.packages.${pkgs.system}.swww
@@ -52,6 +52,17 @@
       name = "Bibata-Modern-Ice";
       package = pkgs.bibata-cursors;
       size = 24;
+    };
+  };
+
+  xdg.portal = {
+    enable = true;
+    extraPortals = [ pkgs.xdg-desktop-portal-gtk pkgs.xdg-desktop-portal-hyprland ];
+  };
+
+  dconf.settings = {
+    "org/gnome/desktop/interface" = {
+      color-scheme = "prefer-dark";
     };
   };
 

@@ -2,16 +2,30 @@
   {
     imports = [ ./hardware-configuration.nix ];
 
-    # Bootloader
-    boot.loader.grub = {
-      enable = true;
-      device = "nodev";
-      useOSProber = true;
-      efiSupport = true;
+  nix = {
+    # Auto-delete unused packages
+    gc = {
+      automatic = true;
+      dates = "weekly";
+      options = "--delete-older-than 7d";
     };
 
-    boot.loader.efi.canTouchEfiVariables = true;
+   settings.auto-optimise-store = true;
+  };
 
+    # Bootloader
+    boot.loader = {
+      efi.canTouchEfiVariables = true;
+      grub = {
+        enable = true;
+        device = "nodev";
+        useOSProber = true;
+        efiSupport = true;
+        configurationLimit = 10;
+      };
+    };
+    boot.kernelParams = [ "loglevel=3" "acpi_osi=Linux" ];
+    
     # Network
     networking = {
       hostName = "nixos";
