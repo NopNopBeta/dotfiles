@@ -86,7 +86,6 @@
       oh-my-zsh
       zsh
       bibata-cursors
-      nautilus
       lxde.lxsession
       sddm-astronaut
     ];
