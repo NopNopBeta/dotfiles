@@ -88,6 +88,7 @@
       bibata-cursors
       lxde.lxsession
       sddm-astronaut
+      kvantum
     ];
 
     # Font config

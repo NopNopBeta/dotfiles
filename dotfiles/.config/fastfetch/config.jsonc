@@ -16,11 +16,11 @@
       "type": "custom",
       "format": "┌──────────────────────────────────────────┐"
     },
-    {
-      "type": "chassis",
-      "key": "  󰇺 Chassis",
-      "format": "{3}"
-    },
+    //{
+    //  "type": "chassis",
+    //  "key": "  󰇺 Chassis",
+    //  "format": "{3}"
+    //},
     {
       "type": "os",
       "key": "  󰣇 OS",
