@@ -24,7 +24,7 @@
         configurationLimit = 10;
       };
     };
-    boot.kernelParams = [ "loglevel=3" "acpi_osi=Linux" ];
+    boot.kernelParams = [ "loglevel=4" "acpi_osi=Linux" ];
     
     # Network
     networking = {

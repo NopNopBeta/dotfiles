@@ -1,7 +1,10 @@
 { config, pkgs, inputs, ... }:
 {
   nixpkgs.config.allowUnfree = true;
-
+  
+  imports = [
+    inputs.nixvim.homeManagerModules.nixvim # Import the nixvim module
+  ];
 
   home.stateVersion = "23.11";
   home.username = "nop";
@@ -9,7 +12,6 @@
 
   home.packages = with pkgs; [
     htop
-    neovim
     discord
     bitwarden
     git
@@ -21,6 +23,9 @@
     zoom-us
     inputs.zen-browser.packages."${pkgs.system}".default
     cava
+    transmission_4-qt
+    telegram-desktop
+    
   ];
 
   programs.bash = {
@@ -55,10 +60,17 @@
     };
   };
 
-  xdg.portal = {
-    enable = true;
-    extraPortals = [ pkgs.xdg-desktop-portal-gtk pkgs.xdg-desktop-portal-hyprland ];
-  };
+xdg.portal = {
+  enable = true;
+  extraPortals = [
+    pkgs.xdg-desktop-portal-hyprland
+    pkgs.xdg-desktop-portal-gtk
+  ];
+  configPackages = [
+    pkgs.xdg-desktop-portal-hyprland
+    pkgs.xdg-desktop-portal-gtk
+  ];
+};
 
   dconf.settings = {
     "org/gnome/desktop/interface" = {
@@ -66,5 +78,34 @@
     };
   };
 
+  #nixvim
+  programs.nixvim = {
+    enable = true;
+
+    colorschemes.catppuccin.enable = true;
+    plugins.lualine.enable = true;
+    
+    plugins = {
+    # Built-in NixVim modules for these plugins
+    telescope.enable = true;
+    neo-tree.enable = true;
+    lsp.enable = true;
+    dashboard.enable = true;
+    lazy.enable = true;
+    friendly-snippets.enable = true;
+    };
+
+    extraPlugins = with pkgs.vimPlugins; [
+      vim-nix
+      nvim-treesitter
+      lazy-nvim
+      neo-tree-nvim
+      cmp-nvim-lsp
+      nvim-lspconfig
+      telescope-nvim
+      dashboard-nvim
+    ];
+  };
+  
   programs.firefox.enable = true;  # Moved from system config
 }
