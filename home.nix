@@ -25,7 +25,10 @@
     cava
     transmission_4-qt
     telegram-desktop
-    
+    unzip
+    lutris
+    unrar
+    figma-linux
   ];
 
   programs.bash = {
@@ -93,6 +96,8 @@ xdg.portal = {
     dashboard.enable = true;
     lazy.enable = true;
     friendly-snippets.enable = true;
+    web-devicons.enable = true;
+    mini.enable = true;
     };
 
     extraPlugins = with pkgs.vimPlugins; [
@@ -100,6 +105,7 @@ xdg.portal = {
       nvim-treesitter
       lazy-nvim
       neo-tree-nvim
+      nvim-cmp
       cmp-nvim-lsp
       nvim-lspconfig
       telescope-nvim
