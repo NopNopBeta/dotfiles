@@ -29,6 +29,7 @@
     lutris
     unrar
     figma-linux
+    brave
   ];
 
   programs.bash = {

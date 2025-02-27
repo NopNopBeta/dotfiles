@@ -64,6 +64,11 @@
         qt6.qt5compat  # Often needed for compatibility
       ]; 
     };
+    
+    #Gnome
+    services.xserver = {
+      desktopManager.gnome.enable = true;
+    };
 
     # Hyprland
     programs.hyprland = {
@@ -184,7 +189,7 @@
     security.polkit.enable = true;
     boot.supportedFilesystems = [ "ntfs" "exfat"];
 
-    #fix bug bluetooth
+  #fix bug bluetooth
     services.upower.enable = true;
     services.libinput.enable = true;
     hardware.bluetooth.enable = true;
