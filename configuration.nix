@@ -141,7 +141,7 @@
     # Virt Manager
     programs.virt-manager.enable = true;
     users.groups.libvirtd.members = ["nop"];
-    virtualisation.libvirtd.enable = true;
+    virtualisation.libvirtd.enable = false;
     virtualisation.spiceUSBRedirection.enable = true;
 
     #zsh config
@@ -174,7 +174,7 @@
     };
   };
 
-    #Steam
+#Steam
     programs.steam = {
     enable = true;
     remotePlay.openFirewall = true; # Open ports in the firewall for Steam Remote Play
