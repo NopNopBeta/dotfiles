@@ -112,6 +112,8 @@
       bibata-cursors
       lxde.lxsession
       sddm-astronaut
+      gnomeExtensions.pop-shell
+      gnomeExtensions.applications-menu
     ];
 
     # Font config

@@ -28,7 +28,7 @@
     unzip
     lutris
     unrar
-    figma-linux
+    yt-dlp
     brave
   ];
 
