@@ -107,8 +107,6 @@
       swappy
       grim
       slurp
-      oh-my-zsh
-      zsh
       bibata-cursors
       lxde.lxsession
       sddm-astronaut
