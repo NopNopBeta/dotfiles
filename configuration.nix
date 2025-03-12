@@ -21,7 +21,7 @@
         device = "nodev";
         useOSProber = true;
         efiSupport = true;
-        configurationLimit = 10;
+        configurationLimit = 50;
       };
     };
     boot.kernelParams = [ "loglevel=4" "acpi_osi=Linux" ];
@@ -91,7 +91,7 @@
     users.users.nop = {
       isNormalUser = true;
       description = "nop";
-      extraGroups = [ "networkmanager" "wheel" "video" "storage" ];
+      extraGroups = [ "networkmanager" "wheel" "video" "storage" "docker" ];
       shell = pkgs.zsh;
     };
 
@@ -112,6 +112,7 @@
       sddm-astronaut
       gnomeExtensions.pop-shell
       gnomeExtensions.applications-menu
+      cloudflare-warp
     ];
 
     # Font config
@@ -121,7 +122,7 @@
 
     # System config
     nixpkgs.config.allowUnfree = true;
-    system.stateVersion = "23.11";  # Changed to match flake
+    system.stateVersion = "25.05";  # Changed to match flake
     nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
     # Nvidia
@@ -141,7 +142,7 @@
     # Virt Manager
     programs.virt-manager.enable = true;
     users.groups.libvirtd.members = ["nop"];
-    virtualisation.libvirtd.enable = false;
+    virtualisation.libvirtd.enable = true;
     virtualisation.spiceUSBRedirection.enable = true;
 
     #zsh config
@@ -195,6 +196,8 @@
     hardware.bluetooth.enable = true;
     hardware.bluetooth.powerOnBoot = false;
     services.blueman.enable = true;
-  
+
+  #waydroid
+  virtualisation.waydroid.enable = true;
 }
 
