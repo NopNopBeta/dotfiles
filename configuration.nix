@@ -7,7 +7,7 @@
     gc = {
       automatic = true;
       dates = "weekly";
-      options = "--delete-older-than 7d";
+      options = "--delete-older-than 14d";
     };
 
    settings.auto-optimise-store = true;
@@ -28,7 +28,7 @@
     
     # Network
     networking = {
-      hostName = "nixos";
+      hostName = "Dreamer";
       networkmanager.enable = true;
     };
 
@@ -49,32 +49,29 @@
         LC_TIME = "en_US.UTF-8";
       };
     };
+ 
+  #Gnome
+  services.xserver = {
+    enable = true;
+    desktopManager.gnome.enable = true;
+    displayManager.gdm.enable = true;
+  };
+  xdg.portal = {
+    enable = true;
+    extraPortals = [
+       pkgs.xdg-desktop-portal-gtk
+     ];
+     configPackages = [
+       pkgs.xdg-desktop-portal-gtk
+     ];
+   };
 
-  # Use Qt6 SDDM from KDE packages
-  services.displayManager.sddm = {
-      enable = true;
-      wayland.enable = true;
-      package = pkgs.kdePackages.sddm;  # Explicit Qt6 version
-      theme = "sddm-astronaut-theme";  # Verify theme directory name in package
-      
-      extraPackages = with pkgs; [
-        sddm-astronaut  # The theme package (check exact name)
-        qt6.qtmultimedia
-        qt6.qtsvg
-        qt6.qt5compat  # Often needed for compatibility
-      ]; 
-    };
-    
-    #Gnome
-    services.xserver = {
-      desktopManager.gnome.enable = true;
-    };
+  # dconf.settings = {
+  #   "org/gnome/desktop/interface" = {
+  #     color-scheme = "prefer-dark";
+  #   };
+  # };
 
-    # Hyprland
-    programs.hyprland = {
-      enable = true;
-      xwayland.enable = true;
-    };
 
     # Audio
     security.rtkit.enable = true;
@@ -100,19 +97,12 @@
     environment.systemPackages = with pkgs; [
       kitty
       vscode
-      hyprpanel
-      rofi
       stow
       tree
-      swappy
       grim
       slurp
       bibata-cursors
-      lxde.lxsession
-      sddm-astronaut
-      gnomeExtensions.pop-shell
-      gnomeExtensions.applications-menu
-      cloudflare-warp
+      # sddm-astronaut
     ];
 
     # Font config
@@ -148,7 +138,6 @@
     #zsh config
    programs.zsh = {
     enable = true;
-
     enableCompletion = true;
     autosuggestions.enable = true;
     syntaxHighlighting.enable = true;
@@ -184,20 +173,20 @@
   };
 
   # Auto detect mounting
-    services.devmon.enable = true;
-    services.gvfs.enable = true; 
-    services.udisks2.enable = true;
-    security.polkit.enable = true;
-    boot.supportedFilesystems = [ "ntfs" "exfat"];
+    #services.devmon.enable = true;
+    #services.gvfs.enable = true; 
+    #services.udisks2.enable = true;
+    #security.polkit.enable = true;
+    #boot.supportedFilesystems = [ "ntfs" "exfat"];
 
   #fix bug bluetooth
-    services.upower.enable = true;
-    services.libinput.enable = true;
-    hardware.bluetooth.enable = true;
-    hardware.bluetooth.powerOnBoot = false;
-    services.blueman.enable = true;
+    #services.upower.enable = true;
+    #services.libinput.enable = true;
+    #hardware.bluetooth.enable = true;
+    #hardware.bluetooth.powerOnBoot = false;
+    #services.blueman.enable = true;
 
   #waydroid
-  virtualisation.waydroid.enable = true;
+  #virtualisation.waydroid.enable = true;
 }
 
