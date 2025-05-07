@@ -27,6 +27,7 @@
     lutris
     unrar
     yt-dlp
+    amberol
   ];
 
   programs.bash = {
