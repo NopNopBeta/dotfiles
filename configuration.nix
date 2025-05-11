@@ -102,7 +102,6 @@
       grim
       slurp
       bibata-cursors
-      gnome-menus
       gnomeExtensions.pop-shell
       # sddm-astronaut
     ];
