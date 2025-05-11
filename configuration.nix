@@ -103,7 +103,6 @@
       slurp
       bibata-cursors
       gnomeExtensions.pop-shell
-      # sddm-astronaut
     ];
 
     # Font config
