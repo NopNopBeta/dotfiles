@@ -1,7 +1,7 @@
 { config, pkgs, ... }:
 
 {
-  programs.nixvim.plugins = {
+  programs.nixvim.config.plugins = {
     telescope.enable = true;
     neo-tree.enable = true;
     lsp.enable = true;

@@ -1,6 +1,8 @@
 { config, pkgs, ... }:
 
 {
-  programs.nixvim.colorschemes.catppuccin.enable = true;
-  programs.nixvim.plugins.lualine.enable = true;
+  programs.nixvim.config = {
+    colorschemes.catppuccin.enable = true;  # ✅ Di dalam 'config'
+    plugins.lualine.enable = true;
+  };
 }
