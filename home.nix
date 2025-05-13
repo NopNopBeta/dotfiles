@@ -19,7 +19,6 @@
     git
     qemu
     fastfetch
-    mpv
     zoom-us
     inputs.zen-browser.packages."${pkgs.system}".default
     cava

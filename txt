@@ -1,0 +1,14 @@
+{
+    "0": {
+      "left": ["dashboard", "workspaces", "windowtitle", "cava"],
+      "middle": ["media"],
+      "right": [
+        "volume",
+        "network",
+        "power".
+        "systray",
+        "clock",
+        "notifications"
+      ]
+    }
+  }

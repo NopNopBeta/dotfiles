@@ -4,7 +4,10 @@
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
     zen-browser.url = "github:0xc000022070/zen-browser-flake";
-    nixvim.url = "github:nix-community/nixvim";      
+    nixvim.url = "github:nix-community/nixvim";
+    hyprland.url = "github:hyprwm/Hyprland";     
+    swww.url = "github:LGFae/swww";
+    hyprpanel.url = "github:Jas-SinghFSU/HyprPanel";
 
     home-manager = {
       url = "github:nix-community/home-manager/master";
@@ -18,6 +21,7 @@
       specialArgs = { inherit inputs; };
       modules = [
         ./configuration.nix
+        {nixpkgs.overlays = [inputs.hyprpanel.overlay];}
         home-manager.nixosModules.home-manager
         
         {

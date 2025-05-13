@@ -1,4 +1,4 @@
-{ config, pkgs, lib, ... }:
+{ config, pkgs, inputs, ... }:
   {
     imports = [ ./hardware-configuration.nix ];
 
@@ -32,7 +32,15 @@
       networkmanager.enable = true;
     };
 
-
+    # System config
+    nixpkgs.config.allowUnfree = true;
+    system.stateVersion = "25.05";  # Changed to match flake
+    nix.settings = {
+      substituters = ["https://hyprland.cachix.org"];
+      trusted-public-keys = ["hyprland.cachix.org-1:a7pgxzMz7+chwVL3/pzj6jIBMioiJM7ypFP8PwtkuGc="];
+      experimental-features = [ "nix-command" "flakes" ];
+    };
+    
     # Localization
     time.timeZone = "Asia/Jakarta";
     i18n = {
@@ -65,6 +73,13 @@
        pkgs.xdg-desktop-portal-gtk
      ];
    };
+
+  # Tambahkan konfigurasi Hyprland
+  programs.hyprland = {
+    enable = true;
+    package = inputs.hyprland.packages.${pkgs.system}.hyprland;
+    portalPackage = inputs.hyprland.packages.${pkgs.system}.xdg-desktop-portal-hyprland;
+  };
 
   # dconf.settings = {
   #   "org/gnome/desktop/interface" = {
@@ -103,17 +118,25 @@
       slurp
       bibata-cursors
       gnomeExtensions.pop-shell
+      inputs.hyprland.packages.${pkgs.system}.hyprland
+      inputs.swww.packages.${pkgs.system}.swww
+      rofi
+      hyprpanel
+      waybar
+      pavucontrol
+      swappy
+      cmatrix
+      hyprlock
+      zsh-powerlevel10k
+      wl-clipboard
+      brightnessctl
+      dunst
     ];
 
     # Font config
     fonts.packages = with pkgs; [
       nerd-fonts.jetbrains-mono
     ];
-
-    # System config
-    nixpkgs.config.allowUnfree = true;
-    system.stateVersion = "25.05";  # Changed to match flake
-    nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
     # Nvidia
     hardware.graphics = {
@@ -162,6 +185,21 @@
         zsh-powerlevel10k
       ];
     };
+
+    promptInit = ''
+      # this act as your ~/.zshrc but for all users (/etc/zshrc)
+      source ${pkgs.zsh-powerlevel10k}/share/zsh-powerlevel10k/powerlevel10k.zsh-theme
+
+      if [[ -r "''${XDG_CACHE_HOME:-''$HOME/.cache}/p10k-instant-prompt-''${(%):-%n}.zsh" ]]; then
+        source "''${XDG_CACHE_HOME:-''$HOME/.cache}/p10k-instant-prompt-''${(%):-%n}.zsh"
+      fi
+
+      # uncomment if you want to customize your LS_COLORS
+      # https://manpages.ubuntu.com/manpages/plucky/en/man5/dir_colors.5.html
+      #LS_COLORS='...'
+      #export LS_COLORS
+    '';
+
   };
 
 #Steam
@@ -180,11 +218,11 @@
     #boot.supportedFilesystems = [ "ntfs" "exfat"];
 
   #fix bug bluetooth
-    #services.upower.enable = true;
-    #services.libinput.enable = true;
-    #hardware.bluetooth.enable = true;
-    #hardware.bluetooth.powerOnBoot = false;
-    #services.blueman.enable = true;
+    services.upower.enable = true;
+    services.libinput.enable = true;
+    hardware.bluetooth.enable = true;
+    hardware.bluetooth.powerOnBoot = false;
+    services.blueman.enable = true;
 
   #waydroid
   #virtualisation.waydroid.enable = true;
