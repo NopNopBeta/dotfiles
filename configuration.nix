@@ -131,6 +131,7 @@
       wl-clipboard
       brightnessctl
       dunst
+	    jq
     ];
 
     # Font config
