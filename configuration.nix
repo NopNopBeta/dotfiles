@@ -133,7 +133,6 @@
       swappy
       cmatrix
       hyprlock
-      zsh-powerlevel10k
 	    jq
       mpvpaper
     ];
@@ -171,50 +170,8 @@
     virtualisation.libvirtd.enable = true;
     virtualisation.spiceUSBRedirection.enable = true;
 
-  #   #zsh config
-  #  programs.zsh = {
-  #   enable = true;
-  #   enableCompletion = true;
-  #   autosuggestions.enable = true;
-  #   syntaxHighlighting.enable = true;
-
-  #   ohMyZsh = {
-  #     enable = true;
-  #     plugins = [ 
-  #       "git" 
-  #       "sudo" 
-  #       "docker" 
-  #       "npm" 
-  #       "rust" 
-  #       "python" 
-  #       "history" 
-  #     ];
-
-  #     theme = "robbyrussell";  
-  #     customPkgs = with pkgs; [
-  #       zsh-autosuggestions
-  #       zsh-syntax-highlighting
-  #       zsh-completions
-  #       zsh-powerlevel10k
-  #     ];
-  #   };
-
-  #   promptInit = ''
-  #     # this act as your ~/.zshrc but for all users (/etc/zshrc)
-  #     source ${pkgs.zsh-powerlevel10k}/share/zsh-powerlevel10k/powerlevel10k.zsh-theme
-
-  #     if [[ -r "''${XDG_CACHE_HOME:-''$HOME/.cache}/p10k-instant-prompt-''${(%):-%n}.zsh" ]]; then
-  #       source "''${XDG_CACHE_HOME:-''$HOME/.cache}/p10k-instant-prompt-''${(%):-%n}.zsh"
-  #     fi
-
-  #     # uncomment if you want to customize your LS_COLORS
-  #     # https://manpages.ubuntu.com/manpages/plucky/en/man5/dir_colors.5.html
-  #     #LS_COLORS='...'
-  #     #export LS_COLORS
-  #   '';
-
-  # };
-
+    programs.zsh.enable = true; #zsh
+ 
 #Steam
     programs.steam = {
     enable = true;
