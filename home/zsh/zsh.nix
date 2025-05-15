@@ -4,8 +4,7 @@
   home.packages = with pkgs; [
     zsh-autosuggestions
     zsh-syntax-highlighting
-    zsh-completions
-    zsh-powerlevel10k
+    zsh-completions    zsh-powerlevel10k
   ];
 
   programs.zsh = {
@@ -19,6 +18,7 @@
       # https://manpages.ubuntu.com/manpages/plucky/en/man5/dir_colors.5.html
       #LS_COLORS='...'
       #export LS_COLORS
+      fastfetch
     '';
   };
 }

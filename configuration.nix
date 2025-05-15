@@ -106,6 +106,7 @@
       description = "nop";
       extraGroups = [ "networkmanager" "wheel" "video" "storage" "docker" ];
       shell = pkgs.zsh;
+      ignoreShellProgramCheck = true;
     };
 
 
@@ -170,7 +171,7 @@
     virtualisation.libvirtd.enable = true;
     virtualisation.spiceUSBRedirection.enable = true;
 
-    programs.zsh.enable = true; #zsh
+    #programs.zsh.enable = true; #zsh
  
 #Steam
     programs.steam = {
