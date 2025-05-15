@@ -3,5 +3,6 @@
 {
   imports = [
     ./nixvim/default.nix
+    ./zsh/default.nix
   ];
 }

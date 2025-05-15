@@ -77,6 +77,7 @@
   # Tambahkan konfigurasi Hyprland
   programs.hyprland = {
     enable = true;
+    xwayland.enable = true;
     package = inputs.hyprland.packages.${pkgs.system}.hyprland;
     portalPackage = inputs.hyprland.packages.${pkgs.system}.xdg-desktop-portal-hyprland;
   };
@@ -110,6 +111,11 @@
 
     # System packages
     environment.systemPackages = with pkgs; [
+      libva
+      libva-utils
+      glxinfo
+      vulkan-tools
+      mesa
       kitty
       vscode
       stow
@@ -128,10 +134,8 @@
       cmatrix
       hyprlock
       zsh-powerlevel10k
-      wl-clipboard
-      brightnessctl
-      dunst
 	    jq
+      mpvpaper
     ];
 
     # Font config
@@ -139,16 +143,24 @@
       nerd-fonts.jetbrains-mono
     ];
 
-    # Nvidia
-    hardware.graphics = {
-      enable = true;
-    };
-
     hardware.nvidia = {
     modesetting.enable = true;
     nvidiaSettings = true;
     open = true;
     package = config.boot.kernelPackages.nvidiaPackages.stable;
+    };
+
+
+    # hardware acceleration
+    hardware.graphics = {
+      enable = true;
+      enable32Bit = true; # for software 32-bit
+      extraPackages = with pkgs; [
+        intel-media-driver # Intel iGPU
+        vaapiVdpau
+        libvdpau-va-gl
+        nvidia-vaapi-driver # Driver VAAPI NVIDIA
+      ];
     };
 
     services.xserver.videoDrivers = ["nvidia"];
@@ -159,49 +171,49 @@
     virtualisation.libvirtd.enable = true;
     virtualisation.spiceUSBRedirection.enable = true;
 
-    #zsh config
-   programs.zsh = {
-    enable = true;
-    enableCompletion = true;
-    autosuggestions.enable = true;
-    syntaxHighlighting.enable = true;
+  #   #zsh config
+  #  programs.zsh = {
+  #   enable = true;
+  #   enableCompletion = true;
+  #   autosuggestions.enable = true;
+  #   syntaxHighlighting.enable = true;
 
-    ohMyZsh = {
-      enable = true;
-      plugins = [ 
-        "git" 
-        "sudo" 
-        "docker" 
-        "npm" 
-        "rust" 
-        "python" 
-        "history" 
-      ];
+  #   ohMyZsh = {
+  #     enable = true;
+  #     plugins = [ 
+  #       "git" 
+  #       "sudo" 
+  #       "docker" 
+  #       "npm" 
+  #       "rust" 
+  #       "python" 
+  #       "history" 
+  #     ];
 
-      theme = "robbyrussell";  # Ganti dengan tema yang diinginkan (e.g., "agnoster")
-      customPkgs = with pkgs; [
-        zsh-autosuggestions
-        zsh-syntax-highlighting
-        zsh-completions
-        zsh-powerlevel10k
-      ];
-    };
+  #     theme = "robbyrussell";  
+  #     customPkgs = with pkgs; [
+  #       zsh-autosuggestions
+  #       zsh-syntax-highlighting
+  #       zsh-completions
+  #       zsh-powerlevel10k
+  #     ];
+  #   };
 
-    promptInit = ''
-      # this act as your ~/.zshrc but for all users (/etc/zshrc)
-      source ${pkgs.zsh-powerlevel10k}/share/zsh-powerlevel10k/powerlevel10k.zsh-theme
+  #   promptInit = ''
+  #     # this act as your ~/.zshrc but for all users (/etc/zshrc)
+  #     source ${pkgs.zsh-powerlevel10k}/share/zsh-powerlevel10k/powerlevel10k.zsh-theme
 
-      if [[ -r "''${XDG_CACHE_HOME:-''$HOME/.cache}/p10k-instant-prompt-''${(%):-%n}.zsh" ]]; then
-        source "''${XDG_CACHE_HOME:-''$HOME/.cache}/p10k-instant-prompt-''${(%):-%n}.zsh"
-      fi
+  #     if [[ -r "''${XDG_CACHE_HOME:-''$HOME/.cache}/p10k-instant-prompt-''${(%):-%n}.zsh" ]]; then
+  #       source "''${XDG_CACHE_HOME:-''$HOME/.cache}/p10k-instant-prompt-''${(%):-%n}.zsh"
+  #     fi
 
-      # uncomment if you want to customize your LS_COLORS
-      # https://manpages.ubuntu.com/manpages/plucky/en/man5/dir_colors.5.html
-      #LS_COLORS='...'
-      #export LS_COLORS
-    '';
+  #     # uncomment if you want to customize your LS_COLORS
+  #     # https://manpages.ubuntu.com/manpages/plucky/en/man5/dir_colors.5.html
+  #     #LS_COLORS='...'
+  #     #export LS_COLORS
+  #   '';
 
-  };
+  # };
 
 #Steam
     programs.steam = {

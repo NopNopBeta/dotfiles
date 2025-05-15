@@ -407,8 +407,8 @@
   "theme.bar.transparent": true,
   "wallpaper.image": "/home/nop/.config/hypr/Image/76678289_p0.png",
   "theme.matugen_settings.mode": "light",
-  "theme.matugen_settings.scheme_type": "fruit-salad",
-  "theme.matugen_settings.variation": "monochrome_2",
+  "theme.matugen_settings.scheme_type": "content",
+  "theme.matugen_settings.variation": "monochrome_1",
   "theme.bar.floating": true,
   "theme.bar.location": "top",
   "theme.bar.buttons.enableBorders": true,
@@ -465,5 +465,7 @@
   "theme.bar.buttons.dashboard.enableBorder": false,
   "menus.media.displayTimeTooltip": true,
   "menus.media.displayTime": true,
-  "theme.bar.buttons.battery.enableBorder": true
+  "theme.bar.buttons.battery.enableBorder": true,
+  "wallpaper.enable": true,
+  "theme.matugen_settings.contrast": 0
 }
