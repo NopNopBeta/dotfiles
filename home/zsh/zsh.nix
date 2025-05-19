@@ -19,6 +19,8 @@
       #LS_COLORS='...'
       #export LS_COLORS
       fastfetch
+
+      export TERM=xterm
     '';
   };
 }

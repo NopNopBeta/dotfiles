@@ -82,6 +82,8 @@
     portalPackage = inputs.hyprland.packages.${pkgs.system}.xdg-desktop-portal-hyprland;
   };
 
+  environment.sessionVariables.NIXOS_OZONE_WL = "1";
+
   # dconf.settings = {
   #   "org/gnome/desktop/interface" = {
   #     color-scheme = "prefer-dark";
@@ -129,13 +131,12 @@
       inputs.swww.packages.${pkgs.system}.swww
       rofi
       hyprpanel
-      waybar
-      pavucontrol
       swappy
       cmatrix
       hyprlock
 	    jq
       mpvpaper
+      lxsession
     ];
 
     # Font config
@@ -173,7 +174,7 @@
 
     #programs.zsh.enable = true; #zsh
  
-#Steam
+  #Steam
     programs.steam = {
     enable = true;
     remotePlay.openFirewall = true; # Open ports in the firewall for Steam Remote Play
