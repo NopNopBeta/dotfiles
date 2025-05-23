@@ -30,6 +30,11 @@
     yt-dlp
     amberol
     vlc
+    libreoffice-qt
+    hunspell
+    hunspellDicts.uk_UA
+    hunspellDicts.th_TH
+    brave
   ];
 
   programs.bash = {

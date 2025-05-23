@@ -57,39 +57,48 @@
         LC_TIME = "en_US.UTF-8";
       };
     };
- 
-  #Gnome
-  services.xserver = {
+
+  services.displayManager.sddm = {
     enable = true;
-    desktopManager.gnome.enable = true;
-    displayManager.gdm.enable = true;
+    wayland.enable = true;  # Gunakan Wayland backend
+    settings = {
+      General = {
+        DisplayServer = "wayland";
+      };
+      Wayland = {
+        SessionDir = "${pkgs.hyprland}/share/wayland-sessions";
+      };
+    };
   };
+
   xdg.portal = {
     enable = true;
+    xdgOpenUsePortal = true;
+    config = {
+      common.default = ["gtk"];
+      hyprland.default = ["gtk" "hyprland"];
+    };
     extraPortals = [
-       pkgs.xdg-desktop-portal-gtk
-     ];
-     configPackages = [
-       pkgs.xdg-desktop-portal-gtk
-     ];
-   };
+      pkgs.xdg-desktop-portal-gtk
+      pkgs.xdg-desktop-portal-wlr
+      pkgs.xdg-desktop-portal-hyprland
+    ];
+  };
 
   # Tambahkan konfigurasi Hyprland
   programs.hyprland = {
     enable = true;
     xwayland.enable = true;
     package = inputs.hyprland.packages.${pkgs.system}.hyprland;
-    portalPackage = inputs.hyprland.packages.${pkgs.system}.xdg-desktop-portal-hyprland;
+    # portalPackage = inputs.hyprland.packages.${pkgs.system}.xdg-desktop-portal-hyprland;
   };
 
-  environment.sessionVariables.NIXOS_OZONE_WL = "1";
-
-  # dconf.settings = {
-  #   "org/gnome/desktop/interface" = {
-  #     color-scheme = "prefer-dark";
-  #   };
-  # };
-
+    # Environment variables
+    environment.sessionVariables = {
+      NIXOS_OZONE_WL = "1";
+      XDG_CURRENT_DESKTOP = "Hyprland";
+      XDG_SESSION_TYPE = "wayland";
+    };
 
     # Audio
     security.rtkit.enable = true;
@@ -164,7 +173,6 @@
       ];
     };
 
-    services.xserver.videoDrivers = ["nvidia"];
 
     # Virt Manager
     programs.virt-manager.enable = true;
