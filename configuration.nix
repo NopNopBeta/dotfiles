@@ -1,6 +1,8 @@
 { config, pkgs, inputs, ... }:
   {
-    imports = [ ./hardware-configuration.nix ];
+    imports = [
+      ./hardware-configuration.nix 
+      ./modules/system.nix];
 
   nix = {
     # Auto-delete unused packages
@@ -65,7 +67,7 @@
     theme = "sddm-astronaut-theme";
       package = pkgs.kdePackages.sddm;  # Explicit Qt6 version
       extraPackages = with pkgs; [
-        sddm-astronaut-custom
+        sddm-astronaut
         qt6.qtmultimedia
         qt6.qtsvg
         qt6.qt5compat  # Often needed for compatibility

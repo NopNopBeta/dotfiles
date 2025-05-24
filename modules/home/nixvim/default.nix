@@ -2,7 +2,7 @@
 
 {
   imports = [
-    ./default.nix
+    ./nixvim.nix
     ./ui.nix
     ./plugins.nix
   ];
