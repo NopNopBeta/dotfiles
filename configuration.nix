@@ -57,10 +57,19 @@
         LC_TIME = "en_US.UTF-8";
       };
     };
+  
 
   services.displayManager.sddm = {
     enable = true;
     wayland.enable = true;  # Gunakan Wayland backend
+    theme = "sddm-astronaut-theme";
+      package = pkgs.kdePackages.sddm;  # Explicit Qt6 version
+      extraPackages = with pkgs; [
+        sddm-astronaut-custom
+        qt6.qtmultimedia
+        qt6.qtsvg
+        qt6.qt5compat  # Often needed for compatibility
+      ]; 
     settings = {
       General = {
         DisplayServer = "wayland";
@@ -75,12 +84,11 @@
     enable = true;
     xdgOpenUsePortal = true;
     config = {
-      common.default = ["gtk"];
-      hyprland.default = ["gtk" "hyprland"];
+      # common.default = ["gtk"];
+      hyprland.default = ["hyprland"];
     };
     extraPortals = [
-      pkgs.xdg-desktop-portal-gtk
-      pkgs.xdg-desktop-portal-wlr
+      # pkgs.xdg-desktop-portal-gtk
       pkgs.xdg-desktop-portal-hyprland
     ];
   };
@@ -89,7 +97,7 @@
   programs.hyprland = {
     enable = true;
     xwayland.enable = true;
-    package = inputs.hyprland.packages.${pkgs.system}.hyprland;
+    # package = inputs.hyprland.packages.${pkgs.system}.hyprland;
     # portalPackage = inputs.hyprland.packages.${pkgs.system}.xdg-desktop-portal-hyprland;
   };
 
@@ -98,6 +106,10 @@
       NIXOS_OZONE_WL = "1";
       XDG_CURRENT_DESKTOP = "Hyprland";
       XDG_SESSION_TYPE = "wayland";
+      MOZ_ENABLE_WAYLAND = "1";
+      GDK_BACKEND = "wayland";
+      WLR_NO_HARDWARE_CURSORS = "1";
+      XCURSOR_SIZE = "24";
     };
 
     # Audio
@@ -146,6 +158,8 @@
 	    jq
       mpvpaper
       lxsession
+      sddm-astronaut
+      polkit
     ];
 
     # Font config

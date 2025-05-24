@@ -3,7 +3,7 @@
   # nixpkgs.config.allowUnfree = true;
   
   imports = [
-    ./home/default.nix
+    ./modules/home.nix
     inputs.nixvim.homeManagerModules.nixvim # Import the nixvim module
 
   ];

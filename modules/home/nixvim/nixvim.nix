@@ -1,11 +1,6 @@
 { config, lib, pkgs, ... }:
 
 {
-  imports = [
-    ./ui.nix
-    ./plugins.nix
-  ];
-
   # All configuration inside the 'config' attribute
   programs.nixvim = {
     enable = true;
