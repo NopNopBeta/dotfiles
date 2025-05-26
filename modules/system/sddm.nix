@@ -1,12 +1,21 @@
 { config, pkgs, ... }:
 
 let
-  sddm-astronaut-custom = pkgs.sddm-astronaut.overrideAttrs (oldAttrs: {
-    postInstall = (oldAttrs.postInstall or "") + ''
-      substituteInPlace $out/share/sddm/themes/sddm-astronaut-theme/metadata.desktop \
-        --replace "ConfigFile=Themes/astronaut.conf" "ConfigFile=Themes/hyprland_kath.conf"
-    '';
-  });
+  sddm-astronaut-patched = pkgs.runCommand "sddm-astronaut-patched" {
+    src = pkgs.sddm-astronaut;
+  } ''
+    # Copy all filesc
+    cp -r $src $out
+    chmod -R +w $out
+    
+    # Patch metadata.desktop
+    substituteInPlace $out/share/sddm/themes/sddm-astronaut-theme/metadata.desktop \
+      --replace "ConfigFile=Themes/astronaut.conf" "ConfigFile=Themes/hyprland_kath.conf"
+    
+    # Debug output
+    echo "=== Modified metadata.desktop ==="
+    cat $out/share/sddm/themes/sddm-astronaut-theme/metadata.desktop
+  '';
 in
 {
   services.displayManager.sddm = {
@@ -15,7 +24,7 @@ in
     theme = "sddm-astronaut-theme";
     package = pkgs.kdePackages.sddm;
     extraPackages = with pkgs; [
-      sddm-astronaut-custom
+      sddm-astronaut-patched
       qt6.qtmultimedia
       qt6.qtsvg
       qt6.qt5compat
@@ -30,7 +39,7 @@ in
     };
   };
 
-  environment.systemPackages = with pkgs; [
-    sddm-astronaut-custom
+  environment.systemPackages = [
+    sddm-astronaut-patched
   ];
 }

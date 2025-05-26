@@ -60,28 +60,6 @@
       };
     };
   
-
-  services.displayManager.sddm = {
-    enable = true;
-    wayland.enable = true;  # Gunakan Wayland backend
-    theme = "sddm-astronaut-theme";
-      package = pkgs.kdePackages.sddm;  # Explicit Qt6 version
-      extraPackages = with pkgs; [
-        sddm-astronaut
-        qt6.qtmultimedia
-        qt6.qtsvg
-        qt6.qt5compat  # Often needed for compatibility
-      ]; 
-    settings = {
-      General = {
-        DisplayServer = "wayland";
-      };
-      Wayland = {
-        SessionDir = "${pkgs.hyprland}/share/wayland-sessions";
-      };
-    };
-  };
-
   xdg.portal = {
     enable = true;
     xdgOpenUsePortal = true;
@@ -155,13 +133,12 @@
       rofi
       hyprpanel
       swappy
-      cmatrix
-      hyprlock
+      hyprlock        # For Lock Session
 	    jq
-      mpvpaper
-      lxsession
-      sddm-astronaut
-      polkit
+      lxsession       # if you want access your ntfs or exfat
+      brightnessctl   # For Brightness Controll Hyprland
+      pamixer         # For Audio Control Hyprland
+      nautilus        # File Manager
     ];
 
     # Font config
@@ -207,11 +184,11 @@
   };
 
   # Auto detect mounting
-    #services.devmon.enable = true;
-    #services.gvfs.enable = true; 
-    #services.udisks2.enable = true;
-    #security.polkit.enable = true;
-    #boot.supportedFilesystems = [ "ntfs" "exfat"];
+    services.devmon.enable = true;
+    services.gvfs.enable = true; 
+    services.udisks2.enable = true;
+    security.polkit.enable = true;
+    boot.supportedFilesystems = [ "ntfs" "exfat"];
 
   #fix bug bluetooth
     services.upower.enable = true;

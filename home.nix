@@ -35,6 +35,8 @@
     hunspellDicts.uk_UA
     hunspellDicts.th_TH
     brave
+    cmatrix
+
   ];
 
   programs.bash = {
