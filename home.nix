@@ -36,6 +36,8 @@
     hunspellDicts.th_TH
     brave
     cmatrix
+    stow
+    tree
   ];
 
   programs.bash = {

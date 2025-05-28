@@ -122,18 +122,16 @@
       mesa
       kitty
       vscode
-      stow
-      tree
       grim
       slurp
       bibata-cursors
-      inputs.hyprland.packages.${pkgs.system}.hyprland
-      inputs.swww.packages.${pkgs.system}.swww
+      inputs.hyprland.packages.${pkgs.system}.hyprland # Hyprland
+      inputs.swww.packages.${pkgs.system}.swww         # For Wallpaper (Not Needed now because using Hyprpanel) 
       rofi
       hyprpanel
       swappy
       hyprlock        # For Lock Session
-	    jq
+	    jq              # For Hyprland Screenshot
       lxsession       # if you want access your ntfs or exfat
       brightnessctl   # For Brightness Controll Hyprland
       pamixer         # For Audio Control Hyprland
