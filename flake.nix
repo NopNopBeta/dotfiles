@@ -8,6 +8,7 @@
     hyprland.url = "github:hyprwm/Hyprland";     
     swww.url = "github:LGFae/swww";
     hyprpanel.url = "github:Jas-SinghFSU/HyprPanel";
+    spicetify-nix.url = "github:Gerg-L/spicetify-nix";
 
     home-manager = {
       url = "github:nix-community/home-manager/master";

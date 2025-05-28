@@ -64,11 +64,11 @@
     enable = true;
     xdgOpenUsePortal = true;
     config = {
-      # common.default = ["gtk"];
-      hyprland.default = ["hyprland"];
-    };
+      common.default = ["gtk"];
+      hyprland.default = ["hyprland" "gtk"];
+        };
     extraPortals = [
-      # pkgs.xdg-desktop-portal-gtk
+      pkgs.xdg-desktop-portal-gtk
       pkgs.xdg-desktop-portal-hyprland
     ];
   };
@@ -127,7 +127,6 @@
       grim
       slurp
       bibata-cursors
-      gnomeExtensions.pop-shell
       inputs.hyprland.packages.${pkgs.system}.hyprland
       inputs.swww.packages.${pkgs.system}.swww
       rofi
@@ -139,6 +138,8 @@
       brightnessctl   # For Brightness Controll Hyprland
       pamixer         # For Audio Control Hyprland
       nautilus        # File Manager
+      networkmanagerapplet    
+      gnome-keyring
     ];
 
     # Font config

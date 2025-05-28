@@ -432,7 +432,7 @@
   "bar.workspaces.showWsIcons": false,
   "bar.workspaces.showApplicationIcons": false,
   "bar.workspaces.monitorSpecific": false,
-  "bar.workspaces.showAllActive": false,
+  "bar.workspaces.showAllActive": true,
   "bar.workspaces.numbered_active_indicator": "highlight",
   "bar.layouts": {
     "*": {
@@ -467,5 +467,12 @@
   "menus.media.displayTime": true,
   "theme.bar.buttons.battery.enableBorder": true,
   "wallpaper.enable": true,
-  "theme.matugen_settings.contrast": 0
+  "theme.matugen_settings.contrast": 0,
+  "theme.bar.buttons.notifications.enableBorder": false,
+  "bar.notifications.show_total": false,
+  "theme.bar.buttons.systray.enableBorder": false,
+  "bar.bluetooth.label": true,
+  "bar.network.label": false,
+  "bar.network.showWifiInfo": false,
+  "bar.workspaces.workspaceMask": false
 }

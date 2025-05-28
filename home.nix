@@ -5,7 +5,7 @@
   imports = [
     ./modules/home.nix
     inputs.nixvim.homeManagerModules.nixvim # Import the nixvim module
-
+    inputs.spicetify-nix.homeManagerModules.default
   ];
 
   home.stateVersion = "25.05";
@@ -36,7 +36,6 @@
     hunspellDicts.th_TH
     brave
     cmatrix
-
   ];
 
   programs.bash = {
@@ -70,4 +69,14 @@
       };
     };
   programs.firefox.enable = true;  # Moved from system config
+
+  programs.spicetify =
+  let
+    spicePkgs = inputs.spicetify-nix.legacyPackages.${pkgs.system};
+  in
+  {
+    enable = true;
+    theme = spicePkgs.themes.comfy;
+  };
+
 }
