@@ -4,5 +4,7 @@
   imports = [
     ./home/nixvim/default.nix
     ./home/zsh/default.nix
+    ./home/rofi/default.nix
+
   ];
 }

@@ -127,7 +127,6 @@
       bibata-cursors
       inputs.hyprland.packages.${pkgs.system}.hyprland # Hyprland
       inputs.swww.packages.${pkgs.system}.swww         # For Wallpaper (Not Needed now because using Hyprpanel) 
-      rofi
       hyprpanel
       swappy
       hyprlock        # For Lock Session

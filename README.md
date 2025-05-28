@@ -17,11 +17,14 @@
 ### Requirement
 ```
 ttf-jetbrains-mono-nerd
+
 ```
 
 ### Packages
 list of the packages I'm using right now
 ```
+zsh 
+ohmyzsh
 Fastfetch
 Kitty
 Swww
