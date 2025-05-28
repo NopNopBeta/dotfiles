@@ -5,6 +5,7 @@
     ./home/nixvim/default.nix
     ./home/zsh/default.nix
     ./home/rofi/default.nix
+    ./home/zoom/default.nix
 
   ];
 }

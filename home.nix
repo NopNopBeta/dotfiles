@@ -38,6 +38,7 @@
     cmatrix
     stow
     tree
+    mpv
   ];
 
   programs.bash = {
@@ -61,8 +62,8 @@
         package = pkgs.papirus-icon-theme;
       };
       theme = {
-        name = "Adwaita-dark"; # Ganti dengan tema GTK yang Anda gunakan
-        package = pkgs.gnome-themes-extra;
+        name = "adw-gtk3"; # Ganti dengan tema GTK yang Anda gunakan
+        package = pkgs.adw-gtk3;
       };
       cursorTheme = {
         name = "Bibata-Modern-Ice";
@@ -78,7 +79,15 @@
   in
   {
     enable = true;
-    theme = spicePkgs.themes.comfy;
-  };
 
+    enabledExtensions = with spicePkgs.extensions; [
+      adblock
+      hidePodcasts
+      fullAppDisplay
+      popupLyrics
+      powerBar
+  ];
+    theme = spicePkgs.themes.ziro;
+    colorScheme = "blue-light";
+  };
 }

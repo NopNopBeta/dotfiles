@@ -63,11 +63,16 @@
   xdg.portal = {
     enable = true;
     xdgOpenUsePortal = true;
-    config = {
-      common.default = ["gtk"];
-      hyprland.default = ["hyprland" "gtk"];
-        };
+  config = {
+      common = {
+        default = ["gtk"];
+      };
+    hyprland = {
+        "org.freedesktop.impl.portal.ScreenCast" = "hyprland";
+      };
+    };
     extraPortals = [
+      pkgs.xdg-desktop-portal
       pkgs.xdg-desktop-portal-gtk
       pkgs.xdg-desktop-portal-hyprland
     ];
@@ -81,16 +86,16 @@
     # portalPackage = inputs.hyprland.packages.${pkgs.system}.xdg-desktop-portal-hyprland;
   };
 
-    # Environment variables
-    environment.sessionVariables = {
-      NIXOS_OZONE_WL = "1";
-      XDG_CURRENT_DESKTOP = "Hyprland";
-      XDG_SESSION_TYPE = "wayland";
-      MOZ_ENABLE_WAYLAND = "1";
-      GDK_BACKEND = "wayland";
-      WLR_NO_HARDWARE_CURSORS = "1";
-      XCURSOR_SIZE = "24";
-    };
+  environment.sessionVariables = {
+    NIXOS_OZONE_WL = "1";
+    XDG_CURRENT_DESKTOP = "Hyprland";
+    XDG_SESSION_TYPE = "wayland";
+    XDG_SESSION_DESKTOP = "Hyprland";  # Tambahan ini penting untuk portal
+    MOZ_ENABLE_WAYLAND = "1";
+    GDK_BACKEND = "wayland";
+    WLR_NO_HARDWARE_CURSORS = "1";
+    XCURSOR_SIZE = "24";
+  };
 
     # Audio
     security.rtkit.enable = true;
@@ -134,9 +139,10 @@
       lxsession       # if you want access your ntfs or exfat
       brightnessctl   # For Brightness Controll Hyprland
       pamixer         # For Audio Control Hyprland
-      nautilus        # File Manager
+      nautilus       # File Manager
       networkmanagerapplet    
       gnome-keyring
+      dconf
     ];
 
     # Font config
@@ -197,5 +203,6 @@
 
   #waydroid
   #virtualisation.waydroid.enable = true;
+  
 }
 
