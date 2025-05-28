@@ -19,20 +19,4 @@
     source = ./themes;
     recursive = true;
   };
-  
-  # Scripts untuk berbagai launcher
-  home.file.".local/bin/rofi-launcher-t1" = {
-    source = ./themes/scripts/launcher_t1;
-    executable = true;
-  };
-  
-  home.file.".local/bin/rofi-launcher-t2" = {
-    source = ./themes/scripts/launcher_t2;
-    executable = true;
-  };
-  
-  home.file.".local/bin/rofi-powermenu" = {
-    source = ./themes/scripts/powermenu_t1;
-    executable = true;
-  };
 }
