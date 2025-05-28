@@ -6,7 +6,7 @@
     package = pkgs.rofi-wayland;
     
     # Gunakan config.rasi yang sudah ada
-    theme = "~/.config/rofi/launchers/type-7/launcher.sh";
+    theme = "~/.config/rofi/launchers/type-6/style-2.rasi";
     
     # Config tambahan jika diperlukan
     extraConfig = {
