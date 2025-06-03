@@ -19,7 +19,6 @@
     git
     qemu
     fastfetch
-    zoom-us
     inputs.zen-browser.packages."${pkgs.system}".default
     cava
     transmission_4-qt

@@ -64,12 +64,8 @@
     enable = true;
     xdgOpenUsePortal = true;
   config = {
-      common = {
-        default = ["gtk"];
-      };
-    hyprland = {
-        "org.freedesktop.impl.portal.ScreenCast" = "hyprland";
-      };
+      common.default = ["gtk"];
+      hyprland.default = ["hyprland" "gtk"];
     };
     extraPortals = [
       pkgs.xdg-desktop-portal
@@ -139,7 +135,7 @@
       lxsession       # if you want access your ntfs or exfat
       brightnessctl   # For Brightness Controll Hyprland
       pamixer         # For Audio Control Hyprland
-      nautilus       # File Manager
+      nautilus        # File Manager
       networkmanagerapplet    
       gnome-keyring
       dconf
