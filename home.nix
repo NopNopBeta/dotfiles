@@ -27,13 +27,10 @@
     lutris
     unrar
     yt-dlp
-    amberol
     vlc
     libreoffice-qt
     hunspell
-    hunspellDicts.uk_UA
-    hunspellDicts.th_TH
-    brave
+    tor-browser-bundle-bin
     cmatrix
     stow
     tree

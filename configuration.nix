@@ -128,8 +128,8 @@
       bibata-cursors
       inputs.hyprland.packages.${pkgs.system}.hyprland # Hyprland
       inputs.swww.packages.${pkgs.system}.swww         # For Wallpaper (Not Needed now because using Hyprpanel) 
-      hyprpanel
-      swappy
+      hyprpanel       # For Panel
+      swappy          # For Screenshot
       hyprlock        # For Lock Session
 	    jq              # For Hyprland Screenshot
       lxsession       # if you want access your ntfs or exfat
@@ -138,7 +138,7 @@
       nautilus        # File Manager
       networkmanagerapplet    
       gnome-keyring
-      dconf
+      dconf #need for connect wifi
     ];
 
     # Font config
@@ -166,14 +166,13 @@
       ];
     };
 
+    services.xserver.videoDrivers = ["nvidia"];
 
     # Virt Manager
     programs.virt-manager.enable = true;
     users.groups.libvirtd.members = ["nop"];
     virtualisation.libvirtd.enable = true;
     virtualisation.spiceUSBRedirection.enable = true;
-
-    #programs.zsh.enable = true; #zsh
  
   #Steam
     programs.steam = {
