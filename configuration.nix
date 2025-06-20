@@ -26,7 +26,14 @@
         configurationLimit = 50;
       };
     };
-    boot.kernelParams = [ "loglevel=4" "acpi_osi=Linux" ];
+
+    boot.loader.grub2-theme = {
+    enable = true;
+    theme = "vimix";
+    footer = true;
+    customResolution = "1600x900";  # Optional: Set a custom resolution
+  };
+    boot.kernelParams = [ "quite" "splash" "loglevel=3" "acpi_osi=Linux" ];
     
     # Network
     networking = {
