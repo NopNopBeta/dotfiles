@@ -176,7 +176,7 @@
 
     services.xserver.videoDrivers = ["nvidia"];
 
-    # Virt Manager
+  # Virt Manager
     programs.virt-manager.enable = true;
     users.groups.libvirtd.members = ["nop"];
     virtualisation.libvirtd.enable = true;

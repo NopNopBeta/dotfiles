@@ -8,7 +8,7 @@
         package = pkgs.papirus-icon-theme;
       };
       theme = {
-        name = "adw-gtk3"; # Ganti dengan tema GTK yang Anda gunakan
+        name = "adw-gtk3-dark"; # Ganti dengan tema GTK yang Anda gunakan
         package = pkgs.adw-gtk3;
       };
       cursorTheme = {

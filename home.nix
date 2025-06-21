@@ -28,12 +28,12 @@
     unrar
     yt-dlp
     libreoffice-qt
-    hunspell
-    tor-browser-bundle-bin
+    hunspell        #depedency for libreoffice
     cmatrix
     stow
     tree
     mpv
+    amberol
   ];
 
   programs.bash = {
@@ -46,7 +46,7 @@
       name = "Bibata-Modern-Ice";
       package = pkgs.bibata-cursors;
       size = 24;
-      x11.enable = true;
+      # x11.enable = true;
     };
 
   programs.firefox.enable = true;  # Moved from system config
