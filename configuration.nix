@@ -16,6 +16,7 @@
   };
 
     # Bootloader
+    boot.kernelPackages = pkgs.linuxPackages_zen;
     boot.loader = {
       efi.canTouchEfiVariables = true;
       grub = {

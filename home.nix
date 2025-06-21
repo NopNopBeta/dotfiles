@@ -27,7 +27,6 @@
     lutris
     unrar
     yt-dlp
-    vlc
     libreoffice-qt
     hunspell
     tor-browser-bundle-bin
