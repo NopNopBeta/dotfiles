@@ -9,17 +9,6 @@
     swww.url = "github:LGFae/swww";
     hyprpanel.url = "github:Jas-SinghFSU/HyprPanel";
     spicetify-nix.url = "github:Gerg-L/spicetify-nix";
-    
-
-    quickshell = {
-      url = "git+https://git.outfoxxed.me/outfoxxed/quickshell";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
-    astal = {
-      url = "github:aylur/astal";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
 
     home-manager = {
       url = "github:nix-community/home-manager/master";
