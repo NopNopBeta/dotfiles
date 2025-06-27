@@ -136,7 +136,7 @@
       bibata-cursors
       inputs.hyprland.packages.${pkgs.system}.hyprland # Hyprland
       inputs.swww.packages.${pkgs.system}.swww         # For Wallpaper (Not Needed now because using Hyprpanel) 
-      inputs.quickshell.packages.${pkgs.system}.quickshell 
+      # inputs.quickshell.packages.${pkgs.system}.quickshell 
 
       hyprpanel       # For Panel
       swappy          # For Screenshot
