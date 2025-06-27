@@ -34,6 +34,8 @@
     tree
     mpv
     amberol
+    warzone2100
+    lshw
   ];
 
   programs.bash = {

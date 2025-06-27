@@ -136,6 +136,8 @@
       bibata-cursors
       inputs.hyprland.packages.${pkgs.system}.hyprland # Hyprland
       inputs.swww.packages.${pkgs.system}.swww         # For Wallpaper (Not Needed now because using Hyprpanel) 
+      inputs.quickshell.packages.${pkgs.system}.quickshell 
+
       hyprpanel       # For Panel
       swappy          # For Screenshot
       hyprlock        # For Lock Session
@@ -203,6 +205,10 @@
     hardware.bluetooth.enable = true;
     hardware.bluetooth.powerOnBoot = false;
     services.blueman.enable = true;
+
+
+  # Warp-CLI
+    services.cloudflare-warp.enable = true;
 
   #waydroid
   #virtualisation.waydroid.enable = true;
