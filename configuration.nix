@@ -137,7 +137,6 @@
       inputs.hyprland.packages.${pkgs.system}.hyprland # Hyprland
       inputs.swww.packages.${pkgs.system}.swww         # For Wallpaper (Not Needed now because using Hyprpanel) 
       pywal
-  
       hyprpanel       # For Panel
       swappy          # For Screenshot
       hyprlock        # For Lock Session
@@ -162,6 +161,7 @@
     open = true;
     package = config.boot.kernelPackages.nvidiaPackages.stable;
     };
+
 
     # hardware acceleration
     hardware.graphics = {

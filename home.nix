@@ -4,6 +4,7 @@
   
   imports = [
     ./modules/home.nix
+    inputs.nixvim.homeManagerModules.nixvim # Import the nixvim module
     inputs.spicetify-nix.homeManagerModules.default
   ];
 
