@@ -455,7 +455,7 @@
       ]
     }
   },
-  "menus.dashboard.powermenu.avatar.image": "/home/nop/Downloads/2bc54579fb6e71beabcaf52258e6d377.png",
+  "menus.dashboard.powermenu.avatar.image": "~/.face.icon",
   "theme.bar.scaling": 90,
   "theme.bar.menus.menu.dashboard.scaling": 80,
   "theme.font.weight": 600,
