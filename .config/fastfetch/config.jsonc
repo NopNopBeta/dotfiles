@@ -1,7 +1,7 @@
 {
   "logo": {
     "source": "~/.config/fastfetch/pngs/catto.png",
-    "height": 18
+    "height": 15
   },
   "display": {
     "separator": " : "
@@ -70,7 +70,7 @@
     },
     {
       "type": "cpu",
-      "format": "{1} @ {7}",
+      "format": "{1}",
       "key": "   CPU",
       "keyColor": "blue"
     },

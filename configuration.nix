@@ -121,22 +121,21 @@
       ignoreShellProgramCheck = true;
     };
 
-
     # System packages
     environment.systemPackages = with pkgs; [
-      libva
-      libva-utils
-      glxinfo
-      vulkan-tools
-      mesa
-      kitty
-      vscode
-      grim
-      slurp
-      bibata-cursors
+      libva           # Rendering for GPU
+      libva-utils     # Rendering for GPU
+      glxinfo         # Troubleshoot for GPU
+      vulkan-tools    # Depedency for GPU
+      mesa            # iGPU
+      kitty           # Terminal
+      vscode          # Code
+      grim            # For Screenshot
+      slurp           # For Screenshot
+      bibata-cursors  # package for Cursor
       inputs.hyprland.packages.${pkgs.system}.hyprland # Hyprland
       inputs.swww.packages.${pkgs.system}.swww         # For Wallpaper (Not Needed now because using Hyprpanel) 
-      pywal
+      pywal           # For Color management for Hyprland
       hyprpanel       # For Panel
       swappy          # For Screenshot
       hyprlock        # For Lock Session
@@ -145,8 +144,8 @@
       brightnessctl   # For Brightness Controll Hyprland
       pamixer         # For Audio Control Hyprland
       nautilus        # File Manager
-      networkmanagerapplet    
-      gnome-keyring
+      networkmanagerapplet #need for connect wifi   
+      gnome-keyring #need for connect wifi
       dconf #need for connect wifi
     ];
 
