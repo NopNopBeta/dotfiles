@@ -8,5 +8,6 @@
     ./home/zoom/default.nix
     ./home/gtk/gtk.nix
     ./home/spicetify/spicetify.nix
+    ./home/quickshell/quickshell.nix
   ];
 }

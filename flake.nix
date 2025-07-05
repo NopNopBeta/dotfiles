@@ -18,7 +18,11 @@
     grub2-themes = {
       url = "github:vinceliuice/grub2-themes";
     };
-  };
+
+    quickshell = {
+      url = "git+https://git.outfoxxed.me/outfoxxed/quickshell";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
 
   outputs = { self, nixpkgs, home-manager, grub2-themes, ... }@inputs: {
     nixosConfigurations.Dreamer = nixpkgs.lib.nixosSystem {  # Changed to match hostname
