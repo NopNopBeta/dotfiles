@@ -143,7 +143,7 @@
       lxsession       # if you want access your ntfs or exfat
       brightnessctl   # For Brightness Controll Hyprland
       pamixer         # For Audio Control Hyprland
-      nautilus        # File Manager
+      # nautilus        # File Manager
       networkmanagerapplet #need for connect wifi   
       gnome-keyring #need for connect wifi
       dconf #need for connect wifi

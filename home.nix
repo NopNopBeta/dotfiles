@@ -32,6 +32,7 @@
     tree
     mpv
     amberol
+    dolphin
   ];
 
   programs.bash = {
