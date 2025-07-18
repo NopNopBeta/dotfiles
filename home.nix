@@ -32,7 +32,8 @@
     tree
     mpv
     amberol
-    dolphin
+    # kdePackages.dolphin
+    nautilus
   ];
 
   programs.bash = {
