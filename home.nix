@@ -28,9 +28,7 @@
     unrar
     yt-dlp
     libreoffice-qt
-    # hunspell        #depedency for libreoffice
     cmatrix
-    stow
     tree
     mpv
     amberol

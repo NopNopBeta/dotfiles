@@ -147,6 +147,8 @@
       networkmanagerapplet #need for connect wifi   
       gnome-keyring #need for connect wifi
       dconf #need for connect wifi
+
+      # inputs.caelestia.packages.${pkgs.system}.default
     ];
 
     # Font config
@@ -208,8 +210,8 @@
   # Warp-CLI
     services.cloudflare-warp.enable = true;
 
-  #waydroid
-  #virtualisation.waydroid.enable = true;
+  # waydroid
+  # virtualisation.waydroid.enable = true;
   
 }
 
