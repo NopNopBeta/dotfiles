@@ -34,6 +34,8 @@
     amberol
     # kdePackages.dolphin
     nautilus
+    inputs.caelestia.packages."${pkgs.system}".default
+
   ];
 
   programs.bash = {

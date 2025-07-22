@@ -34,7 +34,7 @@
     footer = true;
     customResolution = "1600x900";  # Optional: Set a custom resolution
   };
-    boot.kernelParams = [ "quite" "splash" "loglevel=3" "acpi_osi=Linux" ];
+    boot.kernelParams = [ "quite" "splash" "loglevel=3" "acpi_osi=Linux" "nvidia_drm.modeset=1"];
     
     # Network
     networking = {
@@ -92,10 +92,14 @@
 
   environment.sessionVariables = {
     NIXOS_OZONE_WL = "1";
+    LIBVA_DRIVER_NAME = "nvidia";  # Use NVIDIA for VA-API
+    GBM_BACKEND = "nvidia-drm";    # Required for Wayland
+    __GLX_VENDOR_LIBRARY_NAME = "nvidia";
     XDG_CURRENT_DESKTOP = "Hyprland";
     XDG_SESSION_TYPE = "wayland";
     XDG_SESSION_DESKTOP = "Hyprland";  # Tambahan ini penting untuk portal
     MOZ_ENABLE_WAYLAND = "1";
+    MOZ_DISABLE_RDD_SANDBOX = "1"; # Required for some browsers
     GDK_BACKEND = "wayland";
     WLR_NO_HARDWARE_CURSORS = "1";
     XCURSOR_SIZE = "24";
@@ -123,11 +127,11 @@
 
     # System packages
     environment.systemPackages = with pkgs; [
-      libva           # Rendering for GPU
-      libva-utils     # Rendering for GPU
-      glxinfo         # Troubleshoot for GPU
-      vulkan-tools    # Depedency for GPU
-      mesa            # iGPU
+      # libva           # Rendering for GPU
+      # libva-utils     # Rendering for GPU
+      # glxinfo         # Troubleshoot for GPU
+      # vulkan-tools    # Depedency for GPU
+      # mesa            # iGPU
       kitty           # Terminal
       vscode          # Code
       grim            # For Screenshot
@@ -155,28 +159,6 @@
     fonts.packages = with pkgs; [
       nerd-fonts.jetbrains-mono
     ];
-
-    hardware.nvidia = {
-    modesetting.enable = true;
-    nvidiaSettings = true;
-    open = true;
-    package = config.boot.kernelPackages.nvidiaPackages.stable;
-    };
-
-
-    # hardware acceleration
-    hardware.graphics = {
-      enable = true;
-      enable32Bit = true; # for software 32-bit
-      extraPackages = with pkgs; [
-        intel-media-driver # Intel iGPU
-        vaapiVdpau
-        libvdpau-va-gl
-        nvidia-vaapi-driver # Driver VAAPI NVIDIA
-      ];
-    };
-
-    services.xserver.videoDrivers = ["nvidia"];
 
   # Virt Manager
     programs.virt-manager.enable = true;

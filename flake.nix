@@ -24,11 +24,6 @@
       url = "github:caelestia-dots/shell/main";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-
-    app2unit = {
-      url = "github:soramanew/app2unit";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
   };
 
   outputs = { self, nixpkgs, home-manager, grub2-themes, ... }@inputs: {
