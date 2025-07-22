@@ -1,5 +1,5 @@
 { config, pkgs, ... }:    
-    
+  {
     hardware.nvidia = {
       # Modesetting is required.
       modesetting.enable = true;
@@ -47,3 +47,4 @@
       # Load nvidia driver for Xorg and Wayland
       videoDrivers = ["nvidia"];
     };
+  }
