@@ -17,4 +17,19 @@
         size = 24;
       };
     };
+
+  xdg.portal = {
+    enable = true;
+    xdgOpenUsePortal = true;
+    
+    config = {
+      common.default = ["gtk"];
+      hyprland.default = ["hyprland" "gtk"];
+    };
+    extraPortals = [
+      pkgs.xdg-desktop-portal
+      pkgs.xdg-desktop-portal-gtk
+      pkgs.xdg-desktop-portal-hyprland
+    ];
+  };
 }

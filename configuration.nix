@@ -2,9 +2,7 @@
   {
     imports = [
       ./hardware-configuration.nix 
-      ./modules/system.nix
-      # inputs.nur.modules.nixos.default
- 
+      ./modules/system.nix 
     ];
 
   nix = {
@@ -18,27 +16,6 @@
    settings.auto-optimise-store = true;
   };
 
-    # Bootloader
-    boot.kernelPackages = pkgs.linuxPackages_zen;
-    boot.loader = {
-      efi.canTouchEfiVariables = true;
-      grub = {
-        enable = true;
-        device = "nodev";
-        useOSProber = true;
-        efiSupport = true;
-        configurationLimit = 50;
-      };
-      };
-
-    boot.loader.grub2-theme = {
-    enable = true;
-    theme = "vimix";
-    footer = true;
-    customResolution = "1600x900";  # Optional: Set a custom resolution
-    };
-    boot.kernelParams = [ "quite" "splash" "loglevel=3" "acpi_osi=Linux" "nvidia_drm.modeset=1"];
-    
     # Network
     networking = {
       hostName = "Dreamer";
@@ -70,43 +47,6 @@
         LC_TIME = "en_US.UTF-8";
       };
     };
-  
-  xdg.portal = {
-    enable = true;
-    xdgOpenUsePortal = true;
-  config = {
-      common.default = ["gtk"];
-      hyprland.default = ["hyprland" "gtk"];
-    };
-    extraPortals = [
-      pkgs.xdg-desktop-portal
-      pkgs.xdg-desktop-portal-gtk
-      pkgs.xdg-desktop-portal-hyprland
-    ];
-  };
-
-  # Tambahkan konfigurasi Hyprland
-  programs.hyprland = {
-    enable = true;
-    xwayland.enable = true;
-    # package = inputs.hyprland.packages.${pkgs.system}.hyprland;
-    # portalPackage = inputs.hyprland.packages.${pkgs.system}.xdg-desktop-portal-hyprland;
-  };
-
-  environment.sessionVariables = {
-    NIXOS_OZONE_WL = "1";
-    LIBVA_DRIVER_NAME = "nvidia";  # Use NVIDIA for VA-API
-    GBM_BACKEND = "nvidia-drm";    # Required for Wayland
-    __GLX_VENDOR_LIBRARY_NAME = "nvidia";
-    XDG_CURRENT_DESKTOP = "Hyprland";
-    XDG_SESSION_TYPE = "wayland";
-    XDG_SESSION_DESKTOP = "Hyprland";  # Tambahan ini penting untuk portal
-    MOZ_ENABLE_WAYLAND = "1";
-    MOZ_DISABLE_RDD_SANDBOX = "1"; # Required for some browsers
-    GDK_BACKEND = "wayland";
-    WLR_NO_HARDWARE_CURSORS = "1";
-    XCURSOR_SIZE = "24";
-  };
 
     # Audio
     security.rtkit.enable = true;
@@ -134,9 +74,9 @@
       vscode          # Code
       grim            # For Screenshot
       slurp           # For Screenshot
-      bibata-cursors  # package for Cursor
-      inputs.hyprland.packages.${pkgs.system}.hyprland # Hyprland
-      inputs.swww.packages.${pkgs.system}.swww         # For Wallpaper (Not Needed now because using Hyprpanel) 
+      # bibata-cursors  # package for Cursor
+      # inputs.hyprland.packages.${pkgs.system}.hyprland # Hyprland
+      # inputs.swww.packages.${pkgs.system}.swww         # For Wallpaper (Not Needed now because using Hyprpanel) 
       pywal           # For Color management for Hyprland
       hyprpanel       # For Panel
       swappy          # For Screenshot

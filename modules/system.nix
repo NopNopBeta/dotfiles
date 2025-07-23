@@ -4,5 +4,11 @@
   imports = [
     ./system/sddm.nix
     ./system/nvidia.nix
+    ./system/grub2.nix
+    ./system/gtk.nix
+    ./system/hyprland.nix
+
+
+
   ];
 }
