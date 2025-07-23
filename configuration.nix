@@ -65,7 +65,6 @@
       description = "nop";
       extraGroups = [ "networkmanager" "wheel" "video" "storage" "docker" ];
       shell = pkgs.zsh;
-      # ignoreShellProgramCheck = true;
     };
 
     # System packages
@@ -73,8 +72,9 @@
       kitty           # Terminal
       vscode          # Code
       nur.repos.ataraxiasjel.waydroid-script 
+      inputs.caelestia.packages."${pkgs.system}".default
     ];
-
+    
   # Virt Manager
     programs.virt-manager.enable = true;
     users.groups.libvirtd.members = ["nop"];

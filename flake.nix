@@ -20,7 +20,7 @@
 
     # Shell
     caelestia = {
-      url = "github:caelestia-dots/shell/main";
+      url = "github:caelestia-dots/shell";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 

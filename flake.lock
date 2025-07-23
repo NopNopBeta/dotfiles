@@ -101,23 +101,51 @@
     "caelestia": {
       "inputs": {
         "app2unit": "app2unit",
+        "caelestia-cli": "caelestia-cli",
         "nixpkgs": [
           "nixpkgs"
         ],
         "quickshell": "quickshell"
       },
       "locked": {
-        "lastModified": 1752565566,
-        "narHash": "sha256-VYcS+jNapYMjRpN6/cscH/nt57Z2f6kXHpybUQRHPxg=",
+        "lastModified": 1753275868,
+        "narHash": "sha256-mnnFZ24v4lUeFJzkAUfhhK8lJPDnEpElyTAq1KauDxA=",
         "owner": "caelestia-dots",
         "repo": "shell",
-        "rev": "2daa90a4b38248626ae600837f3225c434eba6fe",
+        "rev": "982a5a3e8de4abb322b53ea0bf77b5e57860540f",
         "type": "github"
       },
       "original": {
         "owner": "caelestia-dots",
-        "ref": "main",
         "repo": "shell",
+        "type": "github"
+      }
+    },
+    "caelestia-cli": {
+      "inputs": {
+        "app2unit": [
+          "caelestia",
+          "app2unit"
+        ],
+        "caelestia-shell": [
+          "caelestia"
+        ],
+        "nixpkgs": [
+          "caelestia",
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1753259368,
+        "narHash": "sha256-x4PMmkzQir8OGGKozbJbJ1/9aVtgt4bYuC8KAVxScCQ=",
+        "owner": "caelestia-dots",
+        "repo": "cli",
+        "rev": "882adb2c6c4835943e0c243f122b0959db9963f8",
+        "type": "github"
+      },
+      "original": {
+        "owner": "caelestia-dots",
+        "repo": "cli",
         "type": "github"
       }
     },
