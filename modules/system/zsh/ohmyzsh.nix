@@ -3,7 +3,8 @@
 {
   programs.zsh = {
     oh-my-zsh = {
-      enable = true;
+      enable = true;            
+      theme = "powerlevel10k/powerlevel10";
       plugins = [
         "git"
         "sudo"
@@ -13,7 +14,6 @@
         "python"
         "history"
       ];
-      theme = "powerlevel10k/powerlevel10";
       custom = "$ZSH_CUSTOM"; # atau `null` jika tidak custom
     };
     

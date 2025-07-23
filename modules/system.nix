@@ -7,7 +7,7 @@
     ./system/grub2.nix
     ./system/gtk.nix
     ./system/hyprland.nix
-    ./system/zsh/default.nix
+    ./system/shell.nix
 
 
 
