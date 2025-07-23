@@ -24,16 +24,21 @@
       url = "github:caelestia-dots/shell/main";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    nur = {
+      url = "github:nix-community/NUR";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
-  outputs = { self, nixpkgs, home-manager, grub2-themes, ... }@inputs: {
+  outputs = { self, nixpkgs, home-manager, nur, grub2-themes, ... }@inputs: {
     nixosConfigurations.Dreamer = nixpkgs.lib.nixosSystem {  # Changed to match hostname
       system = "x86_64-linux";
       specialArgs = { inherit inputs; };
       modules = [
         ./configuration.nix
         grub2-themes.nixosModules.default
-
+        nur.modules.nixos.default
         {nixpkgs.overlays = [inputs.hyprpanel.overlay];}
         home-manager.nixosModules.home-manager
 
@@ -47,6 +52,7 @@
           };
         }
       ];
+      
     };
   };
 }

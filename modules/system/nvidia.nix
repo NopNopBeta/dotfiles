@@ -17,12 +17,10 @@
       open = true;
       package = config.boot.kernelPackages.nvidiaPackages.stable;
       
-      
       prime = {
-        offload.enable = false;
-        reverseSync.enable = false;
-        # enable Nvidia Sync
-        sync.enable = true;
+        offload.enable = false;      # Disable because using Nvidia Sync
+        reverseSync.enable = false;  # Disable because using Nvidia Sync
+        sync.enable = true;          # Enable Nvidia Sync
         intelBusId = "PCI:0:2:0";
         nvidiaBusId = "PCI:1:0:0";
       };

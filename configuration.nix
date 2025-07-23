@@ -2,7 +2,10 @@
   {
     imports = [
       ./hardware-configuration.nix 
-      ./modules/system.nix];
+      ./modules/system.nix
+      # inputs.nur.modules.nixos.default
+ 
+    ];
 
   nix = {
     # Auto-delete unused packages
@@ -26,14 +29,14 @@
         efiSupport = true;
         configurationLimit = 50;
       };
-    };
+      };
 
     boot.loader.grub2-theme = {
     enable = true;
     theme = "vimix";
     footer = true;
     customResolution = "1600x900";  # Optional: Set a custom resolution
-  };
+    };
     boot.kernelParams = [ "quite" "splash" "loglevel=3" "acpi_osi=Linux" "nvidia_drm.modeset=1"];
     
     # Network
@@ -127,11 +130,6 @@
 
     # System packages
     environment.systemPackages = with pkgs; [
-      # libva           # Rendering for GPU
-      # libva-utils     # Rendering for GPU
-      # glxinfo         # Troubleshoot for GPU
-      # vulkan-tools    # Depedency for GPU
-      # mesa            # iGPU
       kitty           # Terminal
       vscode          # Code
       grim            # For Screenshot
@@ -147,12 +145,10 @@
       lxsession       # if you want access your ntfs or exfat
       brightnessctl   # For Brightness Controll Hyprland
       pamixer         # For Audio Control Hyprland
-      # nautilus        # File Manager
       networkmanagerapplet #need for connect wifi   
       gnome-keyring #need for connect wifi
       dconf #need for connect wifi
-
-      # inputs.caelestia.packages.${pkgs.system}.default
+      nur.repos.ataraxiasjel.waydroid-script 
     ];
 
     # Font config
@@ -193,7 +189,6 @@
     services.cloudflare-warp.enable = true;
 
   # waydroid
-  # virtualisation.waydroid.enable = true;
-  
+  virtualisation.waydroid.enable = true;
 }
 
