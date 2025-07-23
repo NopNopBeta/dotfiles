@@ -4,8 +4,6 @@
   
   imports = [
     ./modules/home.nix
-    inputs.nixvim.homeManagerModules.nixvim # Import the nixvim module
-    inputs.spicetify-nix.homeManagerModules.default
   ];
 
   home.stateVersion = "25.05";
@@ -32,24 +30,23 @@
     tree
     mpv
     amberol
-    # kdePackages.dolphin
     nautilus
     inputs.caelestia.packages."${pkgs.system}".default
 
   ];
 
-  programs.bash = {
-    enable = true;
-    shellAliases.ll = "ls -l";
-  };
+  # programs.bash = {
+  #   enable = true;
+  #   shellAliases.ll = "ls -l";
+  # };
 
- #Cursor setting
-    home.pointerCursor = {
-      name = "Bibata-Modern-Ice";
-      package = pkgs.bibata-cursors;
-      size = 24;
-      # x11.enable = true;
-    };
+#  #Cursor setting
+#     home.pointerCursor = {
+#       name = "Bibata-Modern-Ice";
+#       package = pkgs.bibata-cursors;
+#       size = 24;
+#       # x11.enable = true;
+#     };
 
   programs.firefox.enable = true;  # Moved from system config
 }

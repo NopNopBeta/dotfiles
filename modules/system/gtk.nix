@@ -1,21 +1,27 @@
 { config, lib, pkgs, ... }:
 { 
-    # Tambahkan konfigurasi GTK
-    gtk = {
-      enable = true;
-      iconTheme = {
-        name = "Papirus-Dark"; # Ganti dengan tema ikon yang Anda gunakan
-        package = pkgs.papirus-icon-theme;
-      };
-      theme = {
-        name = "adw-gtk3-dark"; # Ganti dengan tema GTK yang Anda gunakan
-        package = pkgs.adw-gtk3;
-      };
-      cursorTheme = {
-        name = "Bibata-Modern-Ice";
-        package = pkgs.bibata-cursors;
-        size = 24;
-      };
+  programs.dconf.enable = true; # Diperlukan untuk beberapa tema GTK
+
+  environment.systemPackages = with pkgs; [
+    adw-gtk3
+    papirus-icon-theme
+    bibata-cursors
+  ];
+  
+  # Font config
+  fonts.packages = with pkgs; [
+    nerd-fonts.jetbrains-mono
+  ];
+  
+  environment.sessionVariables = {
+    #Theme
+      GTK_THEME = "adw-gtk3-dark";
+      QT_STYLE_OVERRIDE = "adwaita-dark";  # Untuk konsistensi QT
+
+    # Cursor Config
+      XCURSOR_THEME = "Bibata-Modern-Ice"; # Cursor Theme 
+      XCURSOR_SIZE = "24"; # Cursor Size
+      WLR_NO_HARDWARE_CURSORS = "1"; # Use CPU for cursor movement
     };
 
   xdg.portal = {

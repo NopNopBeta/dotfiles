@@ -26,8 +26,8 @@
     nixpkgs.config.allowUnfree = true;
     system.stateVersion = "25.05";  # Changed to match flake
     nix.settings = {
-      substituters = ["https://hyprland.cachix.org"];
-      trusted-public-keys = ["hyprland.cachix.org-1:a7pgxzMz7+chwVL3/pzj6jIBMioiJM7ypFP8PwtkuGc="];
+      # substituters = ["https://hyprland.cachix.org"];
+      # trusted-public-keys = ["hyprland.cachix.org-1:a7pgxzMz7+chwVL3/pzj6jIBMioiJM7ypFP8PwtkuGc="];
       experimental-features = [ "nix-command" "flakes" ];
     };
     
@@ -65,35 +65,14 @@
       description = "nop";
       extraGroups = [ "networkmanager" "wheel" "video" "storage" "docker" ];
       shell = pkgs.zsh;
-      ignoreShellProgramCheck = true;
+      # ignoreShellProgramCheck = true;
     };
 
     # System packages
     environment.systemPackages = with pkgs; [
       kitty           # Terminal
       vscode          # Code
-      grim            # For Screenshot
-      slurp           # For Screenshot
-      # bibata-cursors  # package for Cursor
-      # inputs.hyprland.packages.${pkgs.system}.hyprland # Hyprland
-      # inputs.swww.packages.${pkgs.system}.swww         # For Wallpaper (Not Needed now because using Hyprpanel) 
-      pywal           # For Color management for Hyprland
-      hyprpanel       # For Panel
-      swappy          # For Screenshot
-      hyprlock        # For Lock Session
-	    jq              # For Hyprland Screenshot
-      lxsession       # if you want access your ntfs or exfat
-      brightnessctl   # For Brightness Controll Hyprland
-      pamixer         # For Audio Control Hyprland
-      networkmanagerapplet #need for connect wifi   
-      gnome-keyring #need for connect wifi
-      dconf #need for connect wifi
       nur.repos.ataraxiasjel.waydroid-script 
-    ];
-
-    # Font config
-    fonts.packages = with pkgs; [
-      nerd-fonts.jetbrains-mono
     ];
 
   # Virt Manager
