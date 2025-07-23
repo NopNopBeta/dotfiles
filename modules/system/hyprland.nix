@@ -19,7 +19,6 @@
       pamixer         # For Audio Control Hyprland
       networkmanagerapplet #need for connect wifi   
       gnome-keyring #need for connect wifi
-      dconf #need for connect wifi
   ];
 
   environment.sessionVariables = {

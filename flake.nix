@@ -6,7 +6,6 @@
     zen-browser.url = "github:0xc000022070/zen-browser-flake";
     nixvim.url = "github:nix-community/nixvim";
     hyprland.url = "github:hyprwm/Hyprland";     
-    swww.url = "github:LGFae/swww";
     hyprpanel.url = "github:Jas-SinghFSU/HyprPanel";
     spicetify-nix.url = "github:Gerg-L/spicetify-nix";
 
