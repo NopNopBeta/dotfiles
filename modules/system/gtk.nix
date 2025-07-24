@@ -6,6 +6,7 @@
     adw-gtk3
     papirus-icon-theme
     bibata-cursors
+    qt6ct
   ];
   
   # Font config
@@ -17,6 +18,7 @@
     #Theme
       GTK_THEME = "adw-gtk3-dark";
       QT_STYLE_OVERRIDE = "adwaita-dark";  # Untuk konsistensi QT
+      QT_QPA_PLATFORMTHEME = "qt6ct";
 
     # Cursor Config
       XCURSOR_THEME = "Bibata-Modern-Ice"; # Cursor Theme 

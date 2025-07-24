@@ -70,9 +70,13 @@
     # System packages
     environment.systemPackages = with pkgs; [
       kitty           # Terminal
-      vscode          # Code
+      vscode          # Code  
+      transmission_4-qt
+
       nur.repos.ataraxiasjel.waydroid-script 
       inputs.caelestia.packages."${pkgs.system}".default
+      inputs.caelestia-cli.packages."${pkgs.system}".default
+      
     ];
     
   # Virt Manager
@@ -88,13 +92,6 @@
     dedicatedServer.openFirewall = true; # Open ports in the firewall for Source Dedicated Server
     localNetworkGameTransfers.openFirewall = true; # Open ports in the firewall for Steam Local Network Game Transfers
   };
-
-  # Auto detect mounting
-    services.devmon.enable = true;
-    services.gvfs.enable = true; 
-    services.udisks2.enable = true;
-    security.polkit.enable = true;
-    boot.supportedFilesystems = [ "ntfs" "exfat"];
 
   #fix bug bluetooth
     services.upower.enable = true;

@@ -405,7 +405,7 @@
   "yellow": "#e0af68",
   "theme.matugen": true,
   "theme.bar.transparent": true,
-  "wallpaper.image": "/home/nop/Pictures/Collection/66393049_p0.png",
+  "wallpaper.image": "/home/nop/Pictures/Collection/108950441_p0.png",
   "theme.matugen_settings.mode": "dark",
   "theme.matugen_settings.scheme_type": "fruit-salad",
   "theme.matugen_settings.variation": "monochrome_3",
@@ -495,5 +495,8 @@
   "menus.dashboard.recording.path": "$HOME/Videos/Screencasts",
   "theme.bar.buttons.modules.netstat.enableBorder": false,
   "menus.dashboard.directories.enabled": false,
-  "theme.bar.menus.enableShadow": false
+  "theme.bar.menus.enableShadow": false,
+  "bar.customModules.storage.paths": [
+    "/"
+  ]
 }

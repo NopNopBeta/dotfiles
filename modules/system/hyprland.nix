@@ -6,6 +6,13 @@
     xwayland.enable = true;
   };
 
+# Auto detect mounting
+services.devmon.enable = true;      # Auto-mount removable devices
+services.gvfs.enable = true;        # GNOME Virtual File System
+services.udisks2.enable = true;     # Disk management daemon
+security.polkit.enable = true;      # Authentication framework
+boot.supportedFilesystems = [ "ntfs" "exfat" ];  # Support Windows filesystems
+
   environment.systemPackages = with pkgs; [
       grim            # For Screenshot
       slurp           # For Screenshot
@@ -17,7 +24,7 @@
       lxsession       # if you want access your ntfs or exfat
       brightnessctl   # For Brightness Controll Hyprland
       pamixer         # For Audio Control Hyprland
-      networkmanagerapplet #need for connect wifi   
+      # networkmanagerapplet # need for connect wifi  (Not Needed now because using Caelestia)
       gnome-keyring #need for connect wifi
   ];
 

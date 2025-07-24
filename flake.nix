@@ -6,7 +6,7 @@
     zen-browser.url = "github:0xc000022070/zen-browser-flake";
     nixvim.url = "github:nix-community/nixvim";
     hyprland.url = "github:hyprwm/Hyprland";     
-    hyprpanel.url = "github:Jas-SinghFSU/HyprPanel";
+    # hyprpanel.url = "github:Jas-SinghFSU/HyprPanel";
     spicetify-nix.url = "github:Gerg-L/spicetify-nix";
 
     home-manager = {
@@ -24,6 +24,12 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    # Shell
+    caelestia-cli = {
+      url = "github:caelestia-dots/cli";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     nur = {
       url = "github:nix-community/NUR";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -38,7 +44,6 @@
         ./configuration.nix
         grub2-themes.nixosModules.default
         nur.modules.nixos.default
-        {nixpkgs.overlays = [inputs.hyprpanel.overlay];}
         home-manager.nixosModules.home-manager
 
         {
