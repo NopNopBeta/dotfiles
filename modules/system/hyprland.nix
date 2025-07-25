@@ -39,6 +39,7 @@ boot.supportedFilesystems = [ "ntfs" "exfat" ];  # Support Windows filesystems
     XDG_SESSION_TYPE = "wayland";     # Wayland Sesssion
     XDG_SESSION_DESKTOP = "Hyprland"; # Hyprland Session
     NIXOS_OZONE_WL = "1";             # Force Software using Wayland Backend 
+    ELECTRON_OZONE_PLATFORM_HINT = "wayland";
     GDK_BACKEND = "wayland";          # Using Wayland Backend
 
     #Browser Setting

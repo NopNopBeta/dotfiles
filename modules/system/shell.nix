@@ -3,9 +3,9 @@
 {
   environment.systemPackages = with pkgs; [
       zsh
-      zsh-autosuggestions
-      zsh-syntax-highlighting
-      zsh-completions
+      # zsh-autosuggestions
+      # zsh-syntax-highlighting
+      # zsh-completions
     ];
     
   programs.zsh = {
@@ -14,6 +14,15 @@
     enableBashCompletion = true;
     autosuggestions.enable = true;
     syntaxHighlighting.enable = true;
+        
+      ohMyZsh = {
+        enable = true;
+        plugins = [
+          "git"
+          "sudo"
+          "history"
+          ];
+        };
 
      promptInit = ''
       # this act as your ~/.zshrc but for all users (/etc/zshrc)
@@ -35,6 +44,7 @@
 
       fastfetch
       export TERM=xterm-256color
+      bindkey "''${key[Up]}" up-line-or-search
     ''; 
   };
 }
