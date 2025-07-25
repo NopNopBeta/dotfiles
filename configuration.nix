@@ -74,9 +74,6 @@
       transmission_4-qt
 
       nur.repos.ataraxiasjel.waydroid-script 
-      inputs.caelestia.packages."${pkgs.system}".default
-      inputs.caelestia-cli.packages."${pkgs.system}".default
-      
     ];
     
   # Virt Manager

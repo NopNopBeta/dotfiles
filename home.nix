@@ -31,6 +31,9 @@
     mpv
     amberol
     nautilus
+
+    inputs.caelestia.packages."${pkgs.system}".default
+    inputs.caelestia-cli.packages."${pkgs.system}".default
   ];
 
   programs.firefox.enable = true;  # Moved from system config
