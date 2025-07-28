@@ -32,6 +32,10 @@
     amberol
     nautilus
 
+
+    fish
+    foot
+    chafa
     inputs.caelestia.packages."${pkgs.system}".default
     inputs.caelestia-cli.packages."${pkgs.system}".default
   ];

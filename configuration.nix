@@ -72,9 +72,6 @@
       # kitty           # Terminal
       vscode          # Code  
       transmission_4-qt
-      starship
-      foot
-      fish
       nur.repos.ataraxiasjel.waydroid-script 
     ];
     
