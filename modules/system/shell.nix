@@ -45,6 +45,9 @@
       fastfetch
       export TERM=xterm-256color
       bindkey "''${key[Up]}" up-line-or-search
+
+    # Custom colours (sama seperti di fish)
+      cat ~/.local/state/caelestia/sequences.txt 2> /dev/null
     ''; 
   };
 }

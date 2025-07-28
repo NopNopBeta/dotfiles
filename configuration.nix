@@ -69,7 +69,7 @@
 
     # System packages
     environment.systemPackages = with pkgs; [
-      kitty           # Terminal
+      # kitty           # Terminal
       vscode          # Code  
       transmission_4-qt
       starship
