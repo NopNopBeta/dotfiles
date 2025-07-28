@@ -1,10 +1,10 @@
-# My First Dotfiles
+# My Dotfiles
 <img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/968f40bb-951e-483f-b885-5689ae7f50e1" />
 
 ### How To Install
 ```
 1. git clone https://github.com/NopNopBeta/dotfiles.git ~/
-2. Change hardware-configuration.nix to your system generate
+2. Change hardware-configuration.nix from your system generate
 2. Change username in home.nix and configuration.nix
 3. ln -s ~/dotfiles/.config/<name config file> ~/.config/
 ```
