@@ -36,8 +36,11 @@
     fish
     foot
     chafa
-    inputs.caelestia.packages."${pkgs.system}".default
+    inputs.caelestia-shell.packages."${pkgs.system}".default
     inputs.caelestia-cli.packages."${pkgs.system}".default
+
+    vscode          # Code  
+    transmission_4-qt
   ];
 
   programs.firefox.enable = true;  # Moved from system config

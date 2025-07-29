@@ -20,6 +20,11 @@
     networking = {
       hostName = "Dreamer";
       networkmanager.enable = true;
+
+      firewall = {
+        checkReversePath = false;
+        trustedInterfaces = [ "virbr0" ];
+      };
     };
 
     # System config
@@ -69,10 +74,8 @@
 
     # System packages
     environment.systemPackages = with pkgs; [
-      # kitty           # Terminal
-      vscode          # Code  
-      transmission_4-qt
-      nur.repos.ataraxiasjel.waydroid-script 
+
+      # nur.repos.ataraxiasjel.waydroid-script 
     ];
     
   # Virt Manager
@@ -101,6 +104,5 @@
     services.cloudflare-warp.enable = true;
 
   # waydroid
-  virtualisation.waydroid.enable = true;
 }
 

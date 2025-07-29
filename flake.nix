@@ -19,7 +19,7 @@
     };
 
     # Shell
-    caelestia = {
+    caelestia-shell = {
       url = "github:caelestia-dots/shell";
       inputs.nixpkgs.follows = "nixpkgs";
     };
@@ -30,10 +30,10 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    nur = {
-      url = "github:nix-community/NUR";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
+    # nur = {
+    #   url = "github:nix-community/NUR";
+    #   inputs.nixpkgs.follows = "nixpkgs";
+    # };
   };
 
   outputs = { self, nixpkgs, home-manager, nur, grub2-themes, ... }@inputs: {
