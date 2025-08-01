@@ -45,7 +45,6 @@
             useGlobalPkgs = true;
             users.nop = import ./home.nix;
             extraSpecialArgs = { inherit inputs; };
-            backupFileExtension = "backup";
           };
         }
       ];
