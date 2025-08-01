@@ -74,8 +74,6 @@
 
     # System packages
     environment.systemPackages = with pkgs; [
-
-      # nur.repos.ataraxiasjel.waydroid-script 
     ];
     
   # Virt Manager
@@ -102,7 +100,5 @@
 
   # Warp-CLI
     services.cloudflare-warp.enable = true;
-
-  # waydroid
 }
 
