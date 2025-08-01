@@ -1,6 +1,14 @@
 # My Dotfiles
 <img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/968f40bb-951e-483f-b885-5689ae7f50e1" />
 
+```
+WM          :   Hyprland
+Terminal    :   Fish
+Shell       :   ZSH
+Bar         :   Quickshell (Caelestia-shell)
+Code Editor :   Vscode & Nvim
+```
+
 ### How To Install
 ```
 1. git clone https://github.com/NopNopBeta/dotfiles.git ~/
@@ -24,7 +32,7 @@ list of the packages I'm using right now
 grim            # For Screenshot
 slurp           # For Screenshot
 pywal           # For Color management for Hyprland
-hyprpanel       # For Panel
+hyprpanel       # For Panel (Unused)
 swappy          # For Screenshot
 hyprlock        # For Lock Session
 jq              # For Hyprland Screenshot
