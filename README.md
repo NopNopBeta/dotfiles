@@ -2,11 +2,15 @@
 <img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/968f40bb-951e-483f-b885-5689ae7f50e1" />
 
 ```
-WM          :   Hyprland
-Terminal    :   Fish
-Shell       :   ZSH
-Bar         :   Quickshell (Caelestia-shell)
-Code Editor :   Vscode & Nvim
+WM              :   Hyprland
+Terminal        :   Fish
+Shell           :   ZSH
+Bar             :   Quickshell (Caelestia-shell)
+Code Editor     :   Vscode & Nvim
+File Manager    :   Nautilus
+Music Player    :   Amberol & Spotify
+Media Player    :   MPV
+Browser         :   Zen Browser
 ```
 
 ### How To Install
