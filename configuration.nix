@@ -71,10 +71,6 @@
       extraGroups = [ "networkmanager" "wheel" "video" "storage" "docker" ];
       shell = pkgs.zsh;
     };
-
-    # System packages
-    environment.systemPackages = with pkgs; [
-    ];
     
   # Virt Manager
     programs.virt-manager.enable = true;
