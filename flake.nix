@@ -6,7 +6,6 @@
     zen-browser.url = "github:0xc000022070/zen-browser-flake";
     nixvim.url = "github:nix-community/nixvim";
     hyprland.url = "github:hyprwm/Hyprland";     
-    # hyprpanel.url = "github:Jas-SinghFSU/HyprPanel";
     spicetify-nix.url = "github:Gerg-L/spicetify-nix";
 
     home-manager = {
@@ -29,21 +28,15 @@
       url = "github:caelestia-dots/cli";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-
-    # nur = {
-    #   url = "github:nix-community/NUR";
-    #   inputs.nixpkgs.follows = "nixpkgs";
-    # };
   };
 
-  outputs = { self, nixpkgs, home-manager, nur, grub2-themes, ... }@inputs: {
+  outputs = { self, nixpkgs, home-manager, grub2-themes, ... }@inputs: {
     nixosConfigurations.Dreamer = nixpkgs.lib.nixosSystem {  # Changed to match hostname
       system = "x86_64-linux";
       specialArgs = { inherit inputs; };
       modules = [
         ./configuration.nix
         grub2-themes.nixosModules.default
-        nur.modules.nixos.default
         home-manager.nixosModules.home-manager
 
         {
