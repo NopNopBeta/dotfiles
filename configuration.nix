@@ -71,6 +71,15 @@
       extraGroups = [ "networkmanager" "wheel" "video" "storage" "docker" ];
       shell = pkgs.zsh;
     };
+
+  virtualisation.docker = {
+    enable = true;
+    enableOnBoot = true;  # Start Docker on boot
+  };
+  
+  environment.systemPackages = with pkgs; [
+    docker-compose  # Optional: For Docker Compose
+  ];
     
   # Virt Manager
     programs.virt-manager.enable = true;
