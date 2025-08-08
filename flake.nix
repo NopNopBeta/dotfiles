@@ -28,12 +28,6 @@
       url = "github:caelestia-dots/cli";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-
-
-    nur = {
-       url = "github:nix-community/NUR";
-       inputs.nixpkgs.follows = "nixpkgs";
-    };
   };
 
   outputs = { self, nixpkgs, home-manager, grub2-themes, nur,... }@inputs: {
@@ -44,8 +38,6 @@
         ./configuration.nix
         grub2-themes.nixosModules.default
         home-manager.nixosModules.home-manager
-        nur.modules.nixos.default
-
         {
           home-manager = {
             useUserPackages = true;
