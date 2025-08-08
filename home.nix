@@ -31,13 +31,14 @@
     mpv
     amberol
     nautilus
-
     inputs.caelestia-shell.packages."${pkgs.system}".default
     inputs.caelestia-cli.packages."${pkgs.system}".default
-
     vscode          # Code  
     transmission_4-qt
+    nur.repos.ataraxiasjel.waydroid-script 
+
   ];
+
 
   programs.firefox.enable = true;  # Moved from system config
 }
