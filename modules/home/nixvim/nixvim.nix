@@ -2,7 +2,7 @@
 
 {
   imports = [
-    inputs.nixvim.homeManagerModules.nixvim # Import the nixvim module
+    inputs.nixvim.homeModules.nixvim # Import the nixvim module
   ];
 
   # All configuration inside the 'config' attribute

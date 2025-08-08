@@ -23,14 +23,14 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    # Shell
+    #Shell
     caelestia-cli = {
       url = "github:caelestia-dots/cli";
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };
 
-  outputs = { self, nixpkgs, home-manager, grub2-themes, nur,... }@inputs: {
+  outputs = { self, nixpkgs, home-manager, grub2-themes, ... }@inputs: {
     nixosConfigurations.Dreamer = nixpkgs.lib.nixosSystem {  # Changed to match hostname
       system = "x86_64-linux";
       specialArgs = { inherit inputs; };

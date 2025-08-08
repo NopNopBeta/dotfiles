@@ -105,8 +105,5 @@
 
   # Warp-CLI
     services.cloudflare-warp.enable = true;
-
-    virtualisation.waydroid.enable = true;
-
 }
 
