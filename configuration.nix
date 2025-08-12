@@ -23,7 +23,7 @@
 
       firewall = {
         checkReversePath = false;
-        trustedInterfaces = [ "virbr0" ];
+        trustedInterfaces = [ "virbr0" "incusbr0"];
       };
     };
 
@@ -68,7 +68,7 @@
     users.users.nop = {
       isNormalUser = true;
       description = "nop";
-      extraGroups = [ "networkmanager" "wheel" "video" "storage" "docker" ];
+      extraGroups = [ "networkmanager" "wheel" "video" "storage" "incus-admin" "docker" ];
       shell = pkgs.zsh;
     };
 
@@ -95,7 +95,7 @@
     localNetworkGameTransfers.openFirewall = true; # Open ports in the firewall for Steam Local Network Game Transfers
   };
 
-  #fix bug bluetooth
+    # fix bug bluetooth
     services.upower.enable = true;
     services.libinput.enable = true;
     hardware.bluetooth.enable = true;
@@ -103,7 +103,14 @@
     services.blueman.enable = true;
 
 
-  # Warp-CLI
+    # Warp-CLI
     services.cloudflare-warp.enable = true;
+
+    virtualisation.incus = {
+      enable = true;
+      ui.enable = true;
+    };
+
+networking.nftables.enable = true;
 }
 

@@ -35,6 +35,7 @@
     inputs.caelestia-cli.packages."${pkgs.system}".default
     vscode          # Code  
     transmission_4-qt
+    osu-lazer-bin
   ];
 
 
