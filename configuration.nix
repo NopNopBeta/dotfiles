@@ -101,16 +101,17 @@
     hardware.bluetooth.enable = true;
     hardware.bluetooth.powerOnBoot = false;
     services.blueman.enable = true;
-
-
+    
     # Warp-CLI
     services.cloudflare-warp.enable = true;
 
+    # Incus (Virtualization manager)
     virtualisation.incus = {
       enable = true;
       ui.enable = true;
     };
 
-networking.nftables.enable = true;
+    # Incus Depedency (For open Firewall
+    networking.nftables.enable = true;
 }
 

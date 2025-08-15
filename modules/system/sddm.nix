@@ -10,7 +10,7 @@ let
     
     # Patch metadata.desktop
     substituteInPlace $out/share/sddm/themes/sddm-astronaut-theme/metadata.desktop \
-      --replace "ConfigFile=Themes/astronaut.conf" "ConfigFile=Themes/hyprland_kath.conf"
+      --replace "ConfigFile=Themes/jake_the_dog.conf" "ConfigFile=Themes/hyprland_kath.conf"
     
     # Debug output
     echo "=== Modified metadata.desktop ==="
