@@ -41,7 +41,8 @@
       #LS_COLORS='...'
       #export LS_COLORS
 
-      fastfetch
+      kittysay "󰄛 Hello I'm a cat"
+      # fastfetch
       export TERM=xterm-256color
       bindkey "''${key[Up]}" up-line-or-search
     ''; 

@@ -79,6 +79,7 @@
   
   environment.systemPackages = with pkgs; [
     docker-compose  # Optional: For Docker Compose
+    nix-output-monitor
   ];
     
   # Virt Manager
