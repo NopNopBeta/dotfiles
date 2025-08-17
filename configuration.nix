@@ -29,10 +29,8 @@
 
     # System config
     nixpkgs.config.allowUnfree = true;
-    system.stateVersion = "25.05";  # Changed to match flake
+    system.stateVersion = "25.11";
     nix.settings = {
-      # substituters = ["https://hyprland.cachix.org"];
-      # trusted-public-keys = ["hyprland.cachix.org-1:a7pgxzMz7+chwVL3/pzj6jIBMioiJM7ypFP8PwtkuGc="];
       experimental-features = [ "nix-command" "flakes" ];
     };
     
@@ -79,7 +77,6 @@
   
   environment.systemPackages = with pkgs; [
     docker-compose  # Optional: For Docker Compose
-    nix-output-monitor
   ];
     
   # Virt Manager
