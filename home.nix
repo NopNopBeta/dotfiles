@@ -37,6 +37,7 @@
     transmission_4-qt
     osu-lazer-bin
     kittysay
+    wpsoffice
   ];
 
 

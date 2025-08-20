@@ -17,7 +17,7 @@
     # Options configuration
     opts = {
       number = true;            # Show line numbers
-      relativenumber = true;    # Show relative line numbers
+      relativenumber = false;    # Show relative line numbers
       shiftwidth = 2;           # Number of spaces for indentation
       tabstop = 2;              # Number of spaces a tab counts for
       expandtab = true;         # Use spaces instead of tabs

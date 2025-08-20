@@ -6,7 +6,7 @@
     colorschemes.catppuccin = {
       enable = true;
       settings = {
-        flavour = "mocha"; # Options: latte, frappe, macchiato, mocha
+        # flavour = "mocha"; # Options: latte, frappe, macchiato, mocha
         integrations = {
           telescope = true;
           dashboard = true;
