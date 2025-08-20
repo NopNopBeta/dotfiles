@@ -31,7 +31,7 @@
   };
 
   outputs = { self, nixpkgs, home-manager, grub2-themes, ... }@inputs: {
-    nixosConfigurations.Dreamer = nixpkgs.lib.nixosSystem {  # Changed to match hostname
+    nixosConfigurations.Dreamer = nixpkgs.lib.nixosSystem { 
       system = "x86_64-linux";
       specialArgs = { inherit inputs; };
       modules = [
