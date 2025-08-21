@@ -8,8 +8,5 @@
     ./system/gtk.nix
     ./system/hyprland.nix
     ./system/shell.nix
-
-
-
   ];
 }

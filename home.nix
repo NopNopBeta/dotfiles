@@ -25,7 +25,6 @@
     lutris
     unrar
     yt-dlp
-    libreoffice-qt
     cmatrix
     tree
     mpv
@@ -38,6 +37,7 @@
     osu-lazer-bin
     kittysay
     wpsoffice
+    hdparm
   ];
 
 
