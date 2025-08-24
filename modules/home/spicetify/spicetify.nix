@@ -18,7 +18,7 @@
       popupLyrics
       powerBar
   ];
-    theme = spicePkgs.themes.burntSienna;
-    # colorScheme = "blue-light";
+    theme = spicePkgs.themes.catppuccin;
+    colorScheme = "latte";
   };
 }

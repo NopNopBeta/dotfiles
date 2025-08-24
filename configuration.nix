@@ -19,14 +19,22 @@
     # Network
     networking = {
       hostName = "Dreamer";
-      networkmanager.enable = true;
+      networkmanager = {
+        enable = true;
+        # WiFi MAC randomization
+        wifi = {
+          macAddress = "random";
+          scanRandMacAddress = true;
+        };
+        # Ethernet MAC randomization (if supported in your NixOS version)
+        ethernet.macAddress = "random";
+      };
 
       firewall = {
         checkReversePath = false;
         trustedInterfaces = [ "virbr0" "incusbr0"];
       };
     };
-
     # System config
     nixpkgs.config.allowUnfree = true;
     system.stateVersion = "25.11";
