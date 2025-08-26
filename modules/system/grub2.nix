@@ -1,8 +1,6 @@
 { config, pkgs, ... }:
 {
-  # Bootloader
-  boot.initrd.luks.devices."luks-f2a5efd0-540a-4372-9ed5-0c466a22652a".device = "/dev/disk/by-uuid/f2a5efd0-540a-4372-9ed5-0c466a22652a";
-  
+  # Bootloader  
   boot.kernelPackages = pkgs.linuxPackages_zen;
   
   boot.loader = {
