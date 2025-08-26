@@ -29,10 +29,15 @@
         # Ethernet MAC randomization (if supported in your NixOS version)
         ethernet.macAddress = "random";
       };
-
+      
+      # Incus Depedency (For open Firewall
+      nftables.enable = true;
       firewall = {
         checkReversePath = false;
         trustedInterfaces = [ "virbr0" "incusbr0"];
+      
+      interfaces.incusbr0.allowedTCPPorts = [53 67];
+      interfaces.incusbr0.allowedUDPPorts = [53 67];
       };
     };
     # System config
@@ -77,15 +82,11 @@
       extraGroups = [ "networkmanager" "wheel" "video" "storage" "incus-admin" "docker" ];
       shell = pkgs.zsh;
     };
-
-  virtualisation.docker = {
-    enable = true;
-    enableOnBoot = true;  # Start Docker on boot
-  };
   
   environment.systemPackages = with pkgs; [
-    docker-compose  # Optional: For Docker Compose
-kitty
+    inputs.caelestia-shell.packages."${pkgs.system}".default
+    inputs.caelestia-cli.packages."${pkgs.system}".default
+    pavucontrol
   ];
     
   # Virt Manager
@@ -118,7 +119,5 @@ kitty
       ui.enable = true;
     };
 
-    # Incus Depedency (For open Firewall
-    networking.nftables.enable = true;
 }
 
