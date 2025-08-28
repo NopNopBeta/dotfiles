@@ -8,7 +8,10 @@
   # All configuration inside the 'config' attribute
   programs.nixvim = {
     enable = true;
-
+    
+    extraPackages = with pkgs; [
+      gcc
+    ];
     # Core editor settings
     globals = {
       mapleader = " ";
