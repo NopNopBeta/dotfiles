@@ -26,20 +26,20 @@
           macAddress = "random";
           scanRandMacAddress = true;
         };
-        # Ethernet MAC randomization (if supported in your NixOS version)
+        # Ethernet MAC randomization (if supported in NixOS version)
         ethernet.macAddress = "random";
       };
       
-      # Incus Depedency (For open Firewall
+      # Incus Depedency For open Firewall
       nftables.enable = true;
       firewall = {
         checkReversePath = false;
         trustedInterfaces = [ "virbr0" "incusbr0"];
-      
-      interfaces.incusbr0.allowedTCPPorts = [53 67];
-      interfaces.incusbr0.allowedUDPPorts = [53 67];
+        interfaces.incusbr0.allowedTCPPorts = [53 67];
+        interfaces.incusbr0.allowedUDPPorts = [53 67];
       };
     };
+
     # System config
     nixpkgs.config.allowUnfree = true;
     system.stateVersion = "25.11";
@@ -79,7 +79,7 @@
     users.users.nop = {
       isNormalUser = true;
       description = "nop";
-      extraGroups = [ "networkmanager" "wheel" "video" "storage" "incus-admin" "docker" ];
+      extraGroups = [ "networkmanager" "wheel" "video" "storage" "incus-admin" ];
       shell = pkgs.zsh;
     };
   
@@ -118,6 +118,5 @@
       enable = true;
       ui.enable = true;
     };
-
 }
 
