@@ -35,7 +35,7 @@
     osu-lazer-bin
     kittysay
     wpsoffice
-    hdparm
+    glxinfo
   ];
 
 

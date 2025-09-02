@@ -1,4 +1,4 @@
-  { config, pkgs, ... }:    
+{ config, pkgs, inputs, ... }:    
 {
   # Tambahkan konfigurasi Hyprland
   programs.hyprland = {
@@ -25,15 +25,14 @@ boot.supportedFilesystems = [ "ntfs" "exfat" ];  # Support Windows filesystems
       brightnessctl   # For Brightness Controll Hyprland
       pamixer         # For Audio Control Hyprland
       # networkmanagerapplet # need for connect wifi  (Not Needed now because using Caelestia)
-      gnome-keyring #need for connect wifi
+      pavucontrol     # Audio Control
+      gnome-keyring   # need for connect wifi
+
+      inputs.caelestia-shell.packages."${pkgs.system}".default
+      inputs.caelestia-cli.packages."${pkgs.system}".default
   ];
 
   environment.sessionVariables = {
-    # Nvidia Config
-    LIBVA_DRIVER_NAME = "nvidia";  # Use NVIDIA for VA-API
-    GBM_BACKEND = "nvidia-drm";    # Required for Wayland
-    __GLX_VENDOR_LIBRARY_NAME = "nvidia"; #Use nvidia instead of mesa driver
-    
     # Wayland & Hyprland Session
     XDG_CURRENT_DESKTOP = "Hyprland"; # Hyprland - GTK
     XDG_SESSION_TYPE = "wayland";     # Wayland Sesssion
@@ -41,9 +40,5 @@ boot.supportedFilesystems = [ "ntfs" "exfat" ];  # Support Windows filesystems
     NIXOS_OZONE_WL = "1";             # Force Software using Wayland Backend 
     ELECTRON_OZONE_PLATFORM_HINT = "wayland";
     GDK_BACKEND = "wayland";          # Using Wayland Backend
-
-    #Browser Setting
-    MOZ_ENABLE_WAYLAND = "1";      # Warland Session for firefox
-    MOZ_DISABLE_RDD_SANDBOX = "1"; # Required for some browsers
   };
 }

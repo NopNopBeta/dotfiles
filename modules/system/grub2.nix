@@ -21,16 +21,13 @@
     customResolution = "1600x900";
   };
 
-  # Parameter kernel yang diperbaiki
   boot.kernelParams = [ 
     "quiet" 
     "splash" 
     "loglevel=3" 
     "acpi_osi=Linux" 
     "nvidia_drm.modeset=1"
-    "acpi_mask_gpe=0x0"   # Ditambahkan untuk mengurangi error ACPI
-  ];
-  
-  # Untuk mengurangi error ACPI lebih lanjut
+    "acpi_mask_gpe=0x0"   
+  ];  
   boot.consoleLogLevel = 3;
 }

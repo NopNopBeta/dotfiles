@@ -45,4 +45,14 @@
       # Load nvidia driver for Xorg and Wayland
       videoDrivers = ["nvidia"];
     };
+
+    environment.sessionVariables = {
+      LIBVA_DRIVER_NAME = "nvidia";  # Use NVIDIA for VA-API
+      GBM_BACKEND = "nvidia-drm";    # Required for Wayland
+    __GLX_VENDOR_LIBRARY_NAME = "nvidia"; #Use nvidia instead of mesa driver
+
+        #Browser Setting
+      MOZ_ENABLE_WAYLAND = "1";      # Warland Session for firefox
+    };
+
   }
