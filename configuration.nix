@@ -65,7 +65,7 @@
     };
 
     # Audio
-    security.rtkit.enable = true;
+    security.rtkit.enable = false;
     services.pipewire = {
       enable = true;
       alsa = {
@@ -82,12 +82,6 @@
       extraGroups = [ "networkmanager" "wheel" "video" "storage" "incus-admin" ];
       shell = pkgs.zsh;
     };
-  
-  environment.systemPackages = with pkgs; [
-    inputs.caelestia-shell.packages."${pkgs.system}".default
-    inputs.caelestia-cli.packages."${pkgs.system}".default
-    pavucontrol
-  ];
     
   # Virt Manager
     programs.virt-manager.enable = true;
@@ -103,7 +97,7 @@
     localNetworkGameTransfers.openFirewall = true; # Open ports in the firewall for Steam Local Network Game Transfers
   };
 
-    # fix bug bluetooth
+  # fix bug bluetooth
     services.upower.enable = true;
     services.libinput.enable = true;
     hardware.bluetooth.enable = true;
@@ -119,4 +113,3 @@
       ui.enable = true;
     };
 }
-
