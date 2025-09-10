@@ -36,6 +36,8 @@
     kittysay
     wpsoffice
     glxinfo
+    kubectl
+    kubernetes-helm
   ];
 
 

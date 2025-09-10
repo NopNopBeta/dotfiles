@@ -35,8 +35,8 @@
       firewall = {
         checkReversePath = false;
         trustedInterfaces = [ "virbr0" "incusbr0"];
-        interfaces.incusbr0.allowedTCPPorts = [53 67];
-        interfaces.incusbr0.allowedUDPPorts = [53 67];
+        interfaces.incusbr0.allowedTCPPorts = [53 67 6443];
+        interfaces.incusbr0.allowedUDPPorts = [53 67 6443];
       };
     };
 

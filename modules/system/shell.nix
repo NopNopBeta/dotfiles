@@ -45,6 +45,7 @@
       # fastfetch
       export TERM=xterm-256color
       bindkey "''${key[Up]}" up-line-or-search
+      export KUBECONFIG=~/.kube/config.yaml
     ''; 
   };
 }
