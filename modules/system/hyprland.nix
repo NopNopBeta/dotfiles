@@ -24,10 +24,10 @@ boot.supportedFilesystems = [ "ntfs" "exfat" ];  # Support Windows filesystems
       lxsession       # if you want access your ntfs or exfat
       brightnessctl   # For Brightness Controll Hyprland
       pamixer         # For Audio Control Hyprland
-      # networkmanagerapplet # need for connect wifi  (Not Needed now because using Caelestia)
+      #  networkmanagerapplet # need for connect wifi  (Not Needed now because using Caelestia)
       pavucontrol     # Audio Control
       gnome-keyring   # need for connect wifi
-
+    
       inputs.caelestia-shell.packages."${pkgs.system}".default
       inputs.caelestia-cli.packages."${pkgs.system}".default
   ];

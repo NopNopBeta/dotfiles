@@ -6,6 +6,5 @@
     ./home/rofi/default.nix
     ./home/zoom/default.nix
     ./home/spicetify/spicetify.nix
-    ./home/packettracer/packettracer.nix
   ];
 }
