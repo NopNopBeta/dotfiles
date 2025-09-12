@@ -14,7 +14,7 @@
       web-devicons.enable = true;
       mini.enable = true;
     };
-    
+
     # Extra plugins that don't have nixvim modules
     extraPlugins = with pkgs.vimPlugins; [
       vim-nix

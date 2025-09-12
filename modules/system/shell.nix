@@ -1,29 +1,34 @@
-{ config, pkgs, lib, ... }:
+{
+  config,
+  pkgs,
+  lib,
+  ...
+}:
 
 {
   environment.systemPackages = with pkgs; [
-      fish
-      foot
-      zsh
-    ];
-    
+    fish
+    foot
+    zsh
+  ];
+
   programs.zsh = {
     enable = true;
     enableCompletion = true;
     enableBashCompletion = true;
     autosuggestions.enable = true;
     syntaxHighlighting.enable = true;
-        
-      ohMyZsh = {
-        enable = true;
-        plugins = [
-          "git"
-          "sudo"
-          "history"
-          ];
-        };
 
-     promptInit = ''
+    ohMyZsh = {
+      enable = true;
+      plugins = [
+        "git"
+        "sudo"
+        "history"
+      ];
+    };
+
+    promptInit = ''
       # this act as your ~/.zshrc but for all users (/etc/zshrc)
       source ${pkgs.zsh-powerlevel10k}/share/zsh-powerlevel10k/powerlevel10k.zsh-theme
       # source /etc/powerlevel10k/p10k.zsh
@@ -46,6 +51,6 @@
       export TERM=xterm-256color
       bindkey "''${key[Up]}" up-line-or-search
       export KUBECONFIG=~/.kube/config.yaml
-    ''; 
+    '';
   };
 }

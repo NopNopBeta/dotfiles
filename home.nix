@@ -1,7 +1,13 @@
-{ config, pkgs, inputs, lib,... }:
+{
+  config,
+  pkgs,
+  inputs,
+  lib,
+  ...
+}:
 {
   # nixpkgs.config.allowUnfree = true;
-  
+
   imports = [
     ./modules/home.nix
   ];
@@ -30,7 +36,7 @@
     mpv
     amberol
     nautilus
-    vscode          # Code  
+    vscode # Code
     transmission_4-qt
     osu-lazer-bin
     kittysay
@@ -38,8 +44,8 @@
     glxinfo
     kubectl
     kubernetes-helm
+    nixfmt
   ];
 
-
-  programs.firefox.enable = true;  # Moved from system config
+  programs.firefox.enable = true; # Moved from system config
 }
