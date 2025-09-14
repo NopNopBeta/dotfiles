@@ -46,10 +46,12 @@
       interfaces.incusbr0.allowedTCPPorts = [
         53
         67
+        9000
       ];
       interfaces.incusbr0.allowedUDPPorts = [
         53
         67
+        9000
       ];
     };
   };
@@ -106,11 +108,6 @@
     ];
     shell = pkgs.zsh;
   };
-
-  environment.systemPackages = with pkgs; [
-    docker
-    docker-compose
-  ];
 
   # Virt Manager
   programs.virt-manager.enable = true;

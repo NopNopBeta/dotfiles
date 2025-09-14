@@ -50,7 +50,10 @@
       # fastfetch
       export TERM=xterm-256color
       bindkey "''${key[Up]}" up-line-or-search
+      
       export KUBECONFIG=~/.kube/config.yaml
+      export VAULT_ADDR=http://127.0.0.1:9000
+
     '';
   };
 }
