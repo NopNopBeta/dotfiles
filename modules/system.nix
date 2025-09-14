@@ -14,5 +14,7 @@
     ./system/hyprland.nix
     ./system/shell.nix
     ./system/packettracer.nix
+
+    ./FinalProject/default.nix
   ];
 }
