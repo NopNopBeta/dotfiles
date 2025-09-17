@@ -7,7 +7,7 @@ let
     
     src = pkgs.fetchurl {
       url = "https://github.com/kubernetes/minikube/releases/download/v${version}/minikube-linux-amd64";
-      sha256 = "0000000000000000000000000000000000000000000000000000"; # Replace with actual hash
+      sha256 = "WM6tXs6YFaYdS+JToHsjhfjPNz2eHrpcl4NETk6eLY4="; # Replace with actual hash
     };
     
     dontUnpack = true;

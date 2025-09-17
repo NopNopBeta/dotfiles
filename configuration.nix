@@ -32,8 +32,20 @@
         scanRandMacAddress = true;
       };
       # Ethernet MAC randomization (if supported in NixOS version)
-      ethernet.macAddress = "random";
+      ethernet.macAddress = "random";    
+    
     };
+
+    nameservers = [ "10.38.240.224" "8.8.8.8" "1.1.1.1" ];
+      # Extra hosts entries
+    # extraHosts = ''
+    #   10.38.240.224 minikube
+    #   10.38.240.224 kube-api
+    #   10.38.240.224 kubernetes
+    #   10.38.240.224 host.minikube.internal
+    # '';
+    
+    search = [ "localdomain" ];
 
     # Incus Depedency For open Firewall
     nftables.enable = true;
@@ -47,11 +59,13 @@
         53
         67
         9000
+        8443
       ];
       interfaces.incusbr0.allowedUDPPorts = [
         53
         67
         9000
+        8443
       ];
     };
   };
