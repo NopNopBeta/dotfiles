@@ -58,13 +58,13 @@
       interfaces.incusbr0.allowedTCPPorts = [
         53
         67
-        9000
+        8200
         8443
       ];
       interfaces.incusbr0.allowedUDPPorts = [
         53
         67
-        9000
+        8200
         8443
       ];
     };

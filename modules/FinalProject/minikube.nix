@@ -22,5 +22,6 @@ in
 {
   environment.systemPackages = with pkgs; [
     minikube-old
-  ];
+kubernetes-helm  
+];
 }

@@ -25,8 +25,8 @@ let
       address = "0.0.0.0:8200"
       tls_disable = 1
     }
-    api_addr = "http://127.0.0.1:8200"
-    cluster_addr = "https://127.0.0.1:8201"
+    api_addr = "http://10.125.252.75/:8200"
+    cluster_addr = "http://10.125.252.75:8200"
   '';
 in
 {
@@ -68,12 +68,12 @@ in
     };
     
     environment = {
-      VAULT_ADDR = "http://127.0.0.1:8200";
+      VAULT_ADDR = "http://10.125.252.75:8200";
     };
   };
 
   environment.variables = {
-    VAULT_ADDR = "http://127.0.0.1:8200";
+    VAULT_ADDR = "http://10.125.252.75:8200";
   };
 
   # Create the data directory with proper permissions

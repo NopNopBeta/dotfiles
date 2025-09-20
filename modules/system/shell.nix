@@ -51,8 +51,8 @@
       export TERM=xterm-256color
       bindkey "''${key[Up]}" up-line-or-search
       
-      export KUBECONFIG=~/.kube/config.yaml
-      # export VAULT_ADDR=http://127.0.0.1:8200
+      export KUBECONFIG=~/bevel/build/config
+      export VAULT_ADDR=http://10.38.240.11:8200
 
     '';
   };
