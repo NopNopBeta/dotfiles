@@ -36,14 +36,14 @@
     
     };
 
-    nameservers = [ "10.38.240.224" "8.8.8.8" "1.1.1.1" ];
-      # Extra hosts entries
-    # extraHosts = ''
-    #   10.38.240.224 minikube
+    nameservers = [ "10.38.240.11" "8.8.8.8" "1.1.1.1" ];
+    # Extra hosts entries
+     extraHosts = ''
+       10.38.240.11 minikube
     #   10.38.240.224 kube-api
     #   10.38.240.224 kubernetes
     #   10.38.240.224 host.minikube.internal
-    # '';
+     '';
     
     search = [ "localdomain" ];
 
@@ -59,13 +59,11 @@
         53
         67
         8200
-        8443
       ];
       interfaces.incusbr0.allowedUDPPorts = [
         53
         67
         8200
-        8443
       ];
     };
   };
