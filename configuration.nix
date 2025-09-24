@@ -27,19 +27,20 @@
     networkmanager = {
       enable = true;
       # WiFi MAC randomization
-      wifi = {
-        macAddress = "random";
-        scanRandMacAddress = true;
-      };
-      # Ethernet MAC randomization (if supported in NixOS version)
-      ethernet.macAddress = "random";    
+      # wifi = {
+      #   macAddress = "random";
+      #   scanRandMacAddress = true;
+      # };
+      # # Ethernet MAC randomization (if supported in NixOS version)
+      # ethernet.macAddress = "random";    
     
     };
+    
 
     nameservers = [ "10.38.240.11" "8.8.8.8" "1.1.1.1" ];
     # Extra hosts entries
      extraHosts = ''
-       10.38.240.11 minikube
+      10.38.240.11    nginx1.nopy.my.id
     #   10.38.240.224 kube-api
     #   10.38.240.224 kubernetes
     #   10.38.240.224 host.minikube.internal
@@ -58,15 +59,22 @@
       interfaces.incusbr0.allowedTCPPorts = [
         53
         67
+        80
         8200
       ];
       interfaces.incusbr0.allowedUDPPorts = [
         53
         67
+        80
         8200
       ];
     };
+
+  localCommands = ''
+    ${pkgs.iproute2}/bin/ip route add 192.168.49.0/24 via 10.38.240.11 || true
+  '';
   };
+  
 
   # System config
   nixpkgs.config.allowUnfree = true;
