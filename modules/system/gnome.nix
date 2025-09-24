@@ -18,5 +18,12 @@
     gnomeExtensions.blur-my-shell
     gnomeExtensions.just-perfection
     gnomeExtensions.arc-menu
+    gnomeExtensions.logo-menu
+    gnomeExtensions.caffeine
+    gnomeExtensions.vitals
+    gnomeExtensions.media-controls
+    gnomeExtensions.pop-shell
+    gnomeExtensions.open-bar
   ];
+
 }

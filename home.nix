@@ -45,6 +45,7 @@
     kubectl
     kubernetes-helm
     nixfmt
+    mpvpaper
   ];
 
   programs.firefox.enable = true; # Moved from system config
