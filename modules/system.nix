@@ -14,7 +14,7 @@
     ./system/hyprland.nix
     ./system/shell.nix
     ./system/packettracer.nix
-    ./system/plasma6.nix
+    ./system/gnome.nix
 
     ./FinalProject/default.nix
   ];
