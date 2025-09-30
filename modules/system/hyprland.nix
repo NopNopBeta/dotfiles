@@ -44,9 +44,9 @@
 
   environment.sessionVariables = {
     # Wayland & Hyprland Session
-    XDG_CURRENT_DESKTOP = "Hyprland"; # Hyprland - GTK
+    # XDG_CURRENT_DESKTOP = "Hyprland"; # Hyprland - GTK
     XDG_SESSION_TYPE = "wayland"; # Wayland Sesssion
-    XDG_SESSION_DESKTOP = "Hyprland"; # Hyprland Session
+    # XDG_SESSION_DESKTOP = "Hyprland"; # Hyprland Session
     NIXOS_OZONE_WL = "1"; # Force Software using Wayland Backend
     ELECTRON_OZONE_PLATFORM_HINT = "wayland";
     GDK_BACKEND = "wayland"; # Using Wayland Backend
