@@ -52,7 +52,7 @@
       bindkey "''${key[Up]}" up-line-or-search
       
       export KUBECONFIG=~/bevel/build/config
-      export VAULT_ADDR=http://10.38.240.11:8200
+      # export VAULT_ADDR=http://10.38.240.11:8200
 
     '';
   };

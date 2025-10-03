@@ -1,6 +1,6 @@
 {
     "background": {
-        "enabled": false
+        "enabled": true
     },
     "bar": {
         "dragThreshold": 20,

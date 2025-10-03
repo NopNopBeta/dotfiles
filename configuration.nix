@@ -41,6 +41,7 @@
     # Extra hosts entries
      extraHosts = ''
       10.38.240.11    nginx1.nopy.my.id
+      10.38.240.11 vault.local
     #   10.38.240.224 kube-api
     #   10.38.240.224 kubernetes
     #   10.38.240.224 host.minikube.internal

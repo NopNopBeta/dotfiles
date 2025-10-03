@@ -7,7 +7,7 @@
 
 {
   imports = [
-    ./vault.nix
+    # ./vault.nix
     ./minikube.nix
   ];
 
