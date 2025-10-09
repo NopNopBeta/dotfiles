@@ -1,7 +1,7 @@
 { config, pkgs, ... }:
 {
   # Bootloader
-  boot.kernelPackages = pkgs.linuxPackages_zen;
+  boot.kernelPackages = pkgs.linuxPackages;
 
   boot.loader = {
     efi.canTouchEfiVariables = true;
