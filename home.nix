@@ -46,7 +46,10 @@
     kubernetes-helm
     nixfmt
     mpvpaper
+    wrk
+    nodejs
+    obsidian
   ];
-
+  
   programs.firefox.enable = true; # Moved from system config
 }

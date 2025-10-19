@@ -57,11 +57,13 @@
         53
         67
         80
+        41641
       ];
       interfaces.incusbr0.allowedUDPPorts = [
         53
         67
         80
+        41641
       ];
     };
 
@@ -153,4 +155,6 @@
     enable = true;
     ui.enable = true;
   };
+
+  services.tailscale.enable = true;
 }

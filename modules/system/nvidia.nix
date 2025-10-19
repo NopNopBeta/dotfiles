@@ -18,9 +18,9 @@
     package = config.boot.kernelPackages.nvidiaPackages.stable;
 
     prime = {
-      offload.enable = false; # Disable because using Nvidia Sync
+      offload.enable = true; # Disable because using Nvidia Sync
       reverseSync.enable = false; # Disable because using Nvidia Sync
-      sync.enable = true; # Enable Nvidia Sync
+      sync.enable = false; # Enable Nvidia Sync
       intelBusId = "PCI:0:2:0";
       nvidiaBusId = "PCI:1:0:0";
     };
@@ -43,7 +43,10 @@
   services.xserver = {
     enable = true;
     # Load nvidia driver for Xorg and Wayland
-    videoDrivers = [ "nvidia" ];
+    videoDrivers = [ 
+      "nvidia"
+      "modesetting"  # example for Intel iGPU; use "amdgpu" here instead if your iGPU is AMD  
+     ];
   };
 
   environment.sessionVariables = {
