@@ -49,6 +49,7 @@
     wrk
     nodejs
     obsidian
+    lens
   ];
   
   programs.firefox.enable = true; # Moved from system config
