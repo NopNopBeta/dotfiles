@@ -19,7 +19,7 @@
   home.packages = with pkgs; [
     htop
     discord
-    bitwarden
+    bitwarden-desktop
     git
     qemu
     fastfetch

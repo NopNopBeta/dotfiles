@@ -32,7 +32,7 @@
     enable32Bit = true; # for software 32-bit
     extraPackages = with pkgs; [
       intel-media-driver # Intel iGPU
-      vaapiVdpau
+      libva-vdpau-driver
       libvdpau-va-gl
       vulkan-validation-layers
       vulkan-loader
