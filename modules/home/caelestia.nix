@@ -13,7 +13,7 @@ imports = [
 programs.caelestia = {
   enable = true;
   systemd = {
-    enable = false; # if you prefer starting from your compositor
+    enable = true; # if you prefer starting from your compositor
     target = "graphical-session.target";
     environment = [];
   };
@@ -21,7 +21,7 @@ programs.caelestia = {
     bar.status = {
       showBattery = false;
     };
-    paths.wallpaperDir = "~/Images";
+    paths.wallpaperDir = "/home/nop/Pictures/Wallpapers";
   };
   cli = {
     enable = true; # Also add caelestia-cli to path

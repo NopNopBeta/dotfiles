@@ -12,7 +12,7 @@
     ./modules/home.nix
   ];
 
-  home.stateVersion = "25.05";
+  home.stateVersion = "25.11";
   home.username = "nop";
   home.homeDirectory = "/home/nop";
 
