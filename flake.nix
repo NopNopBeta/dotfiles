@@ -23,11 +23,11 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    #Shell
-    caelestia-cli = {
-      url = "github:caelestia-dots/cli";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
+    # #Shell
+    # caelestia-cli = {
+    #   url = "github:caelestia-dots/cli";
+    #   inputs.nixpkgs.follows = "nixpkgs";
+    # };
   };
 
   outputs =
