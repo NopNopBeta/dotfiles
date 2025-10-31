@@ -26,6 +26,7 @@
       nvim-lspconfig
       telescope-nvim
       dashboard-nvim
+      transparent
     ];
   };
 }

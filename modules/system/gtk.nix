@@ -11,7 +11,7 @@
     adw-gtk3
     papirus-icon-theme
     bibata-cursors
-    qt6ct
+    qt6Packages.qt6ct
   ];
 
   # Font config

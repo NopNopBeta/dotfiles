@@ -41,7 +41,6 @@
     osu-lazer-bin
     kittysay
     wpsoffice
-    glxinfo
     kubectl
     kubernetes-helm
     nixfmt

@@ -3,25 +3,25 @@
 {
   programs.nixvim = {
     # UI-related configuration
-    colorschemes.catppuccin = {
-      enable = false;
-      settings = {
-        # flavour = "mocha"; # Options: latte, frappe, macchiato, mocha
-        integrations = {
-          telescope = true;
-          dashboard = true;
-          treesitter = true;
-          native_lsp = true;
-        };
-      };
-    };
+    # colorschemes.catppuccin = {
+    #   enable = false;
+    #   settings = {
+    #     # flavour = "mocha"; # Options: latte, frappe, macchiato, mocha
+    #     integrations = {
+    #       telescope = true;
+    #       dashboard = true;
+    #       treesitter = true;
+    #       native_lsp = true;
+    #     };
+    #   };
+    # };
 
     # Status line configuration
     plugins.lualine = {
       enable = true;
       settings = {
         options = {
-          theme = "catppuccin";
+          # theme = "catppuccin";
           component_separators = {
             left = "│";
             right = "│";
