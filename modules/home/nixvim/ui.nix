@@ -4,7 +4,7 @@
   programs.nixvim = {
     # UI-related configuration
     colorschemes.catppuccin = {
-      enable = true;
+      enable = false;
       settings = {
         # flavour = "mocha"; # Options: latte, frappe, macchiato, mocha
         integrations = {

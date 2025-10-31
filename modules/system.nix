@@ -15,6 +15,7 @@
     ./system/shell.nix
     ./system/packettracer.nix
     ./system/gnome.nix
+    ./system/caelestia.nix
 
     ./FinalProject/default.nix
   ];
