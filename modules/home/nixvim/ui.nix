@@ -18,7 +18,7 @@
 
     # Status line configuration
     plugins.lualine = {
-      enable = true;
+      enable = false;
       settings = {
         options = {
           # theme = "catppuccin";

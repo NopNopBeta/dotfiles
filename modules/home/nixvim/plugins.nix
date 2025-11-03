@@ -13,6 +13,7 @@
       friendly-snippets.enable = true;
       web-devicons.enable = true;
       mini.enable = true;
+      transparent.enable = true;
     };
 
     # Extra plugins that don't have nixvim modules
@@ -26,7 +27,7 @@
       nvim-lspconfig
       telescope-nvim
       dashboard-nvim
-      transparent
+      transparent-nvim
     ];
   };
 }
