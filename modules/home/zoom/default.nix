@@ -13,7 +13,7 @@ let
         sha256 = "0ngw2shvl24swam5pzhcs9hvbwrgzsbcdlhpvzqc7nfk8lc28sp3";
       })
       {
-        system = "x86_64-linux";
+        stdenv.hostPlatform.system = "x86_64-linux";
         config.allowUnfree = true;
       };
   pinnedZoom = pinnedZoomPkgs.zoom-us;
