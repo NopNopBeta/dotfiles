@@ -28,10 +28,9 @@
     transmission_4-qt
     telegram-desktop
     unzip
-    lutris
+    # lutris
     unrar
     yt-dlp
-    cmatrix
     tree
     mpv
     amberol
@@ -43,11 +42,11 @@
     wpsoffice
     kubectl
     kubernetes-helm
-    nixfmt
     mpvpaper
     nodejs
     obsidian
     lens
+    zoom-us
   ];
   
   programs.firefox.enable = true; # Moved from system config
