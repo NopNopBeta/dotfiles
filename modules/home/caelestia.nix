@@ -19,7 +19,7 @@ programs.caelestia = {
   };
   settings = {
     bar.status = {
-      showBattery = false;
+      showBattery = true;
     };
     paths.wallpaperDir = "/home/nop/Pictures/Wallpapers";
   };

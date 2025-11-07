@@ -58,14 +58,14 @@
         67
         80
         8200
-        41641
+        32000
       ];
       interfaces.incusbr0.allowedUDPPorts = [
         53
         67
         80
         8200
-        41641
+        32000
       ];
     };
 

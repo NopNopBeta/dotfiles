@@ -45,7 +45,6 @@
     kubernetes-helm
     nixfmt
     mpvpaper
-    wrk
     nodejs
     obsidian
     lens

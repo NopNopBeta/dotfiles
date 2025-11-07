@@ -8,7 +8,7 @@
 {
   imports = [
     ./vault.nix
-    ./minikube.nix
+   # ./minikube.nix
   ];
 
   virtualisation.docker.enable = true;
@@ -16,6 +16,8 @@
     docker-compose
     ansible
     net-tools
+    kubernetes-helm
+    minikube
   ];
 
 }

@@ -40,7 +40,7 @@
     }@inputs:
     {
       nixosConfigurations.Dreamer = nixpkgs.lib.nixosSystem {
-        system = "x86_64-linux";
+        # system = "x86_64-linux";
         specialArgs = { inherit inputs; };
         modules = [
           ./configuration.nix
