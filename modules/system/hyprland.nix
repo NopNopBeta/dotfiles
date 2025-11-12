@@ -37,9 +37,6 @@
     pavucontrol # Audio Control
     gnome-keyring # need for connect wifi
     dnsmasq
-
-  #   inputs.caelestia-shell.packages."${pkgs.system}".default
-  #   inputs.caelestia-cli.packages."${pkgs.system}".default
   ];
 
   environment.sessionVariables = {
