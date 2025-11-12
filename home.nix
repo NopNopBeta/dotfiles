@@ -23,12 +23,11 @@
     git
     qemu
     fastfetch
-    inputs.zen-browser.packages."${pkgs.system}".default
+    inputs.zen-browser.packages."${pkgs.stdenv.hostPlatform.system}".default
     cava
     transmission_4-qt
     telegram-desktop
     unzip
-    # lutris
     unrar
     yt-dlp
     tree
